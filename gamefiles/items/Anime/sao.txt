@@ -1,0 +1,4 @@
+CapeLink:KathleenSAOCapeHP
+Name:Elucidator & Dark Impulser Cape
+
+ClassLink:BlackSwordsmanHP
