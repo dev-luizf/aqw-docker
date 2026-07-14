@@ -1,0 +1,382 @@
+<?php /* Smarty version Smarty-3.1.16, created on 2015-06-06 02:22:56
+         compiled from ".\templates\infinityarts\template.default.html" */ ?>
+<?php /*%%SmartyHeaderCode:2341155722140e24428-26706275%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '7954ba03fb21e2b6221abee39659f8740beb44e9' => 
+    array (
+      0 => '.\\templates\\infinityarts\\template.default.html',
+      1 => 1417202686,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '2341155722140e24428-26706275',
+  'function' => 
+  array (
+  ),
+  'variables' => 
+  array (
+    'Title' => 0,
+    'ProfileData' => 0,
+    'Description' => 0,
+    'Root' => 0,
+    'Template' => 0,
+    'UserData' => 1,
+    'Content' => 0,
+    'Company' => 0,
+    'Domain' => 0,
+    'FacebookId' => 0,
+  ),
+  'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.16',
+  'unifunc' => 'content_55722141d6d4b1_12945593',
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_55722141d6d4b1_12945593')) {function content_55722141d6d4b1_12945593($_smarty_tpl) {?><!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+  <!-- Basic Page Needs -->
+  <meta charset="utf-8">
+  <title><?php if (isset($_GET['profile'])) {?><?php echo $_smarty_tpl->tpl_vars['Title']->value;?>
+: <?php echo mb_strtoupper($_smarty_tpl->tpl_vars['ProfileData']->value->Name, 'UTF-8');?>
+'s Character Profile Page<?php } else { ?><?php echo $_smarty_tpl->tpl_vars['Title']->value;?>
+ - Private Server<?php }?></title>
+  <meta name="description" content="<?php echo $_smarty_tpl->tpl_vars['Description']->value;?>
+">
+  <meta property="fb:admins" content="1456421162" />
+  <meta property="fb:app_id" content="216910951780206"/>
+  
+  <!-- Mobile Specific Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- CSS Style -->
+  <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/css/style.css"> 
+  
+  <!-- Color Skins -->
+  <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/css/skins/blue.css" name="skins"> 
+  
+  <!-- Layout Style -->
+  <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/css/layout/wide.css" name="layout"> 
+  
+  <!-- Style Switcher Box -->
+  <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/css/layout/switcher.css">
+  
+  <!-- Small Icons -->
+  <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/css/icons.css">  
+  <link rel="image_src" href="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/images/imgsrc.jpg">
+  
+  <!-- Start JavaScript -->
+    <script src="https://www.google.com/jsapi"></script>
+    <script>google.load("jquery", "1");</script> 
+    <script src="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/js/jquery.easing.1.3.min.js"></script> <!-- jQuery Easing --> 
+    <script src="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/js/jquery-ui.min.js"></script> <!-- jQuery Ui --> 
+    <script src="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/js/jquery.cookie.js"></script> <!-- jQuery cookie --> 
+    <script src="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/js/jquery.uniform.min.js"></script> <!-- jQuery Uniform -->
+    <script src="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/js/jquery.flexslider.js"></script> <!-- Flex Slider  -->
+    <script src="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/js/jquery.eislideshow.js"></script> <!-- Elastic Slider  -->
+    <script src="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/js/jquery.iconmenu.js"></script> <!-- Sliding Text and Icon Menu Style  -->
+    <script src="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/js/jquery.waitforimages.min.js"></script> <!--   -->
+    <script src="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/js/colortip.js"></script> <!-- Colortip Tooltip Plugin  -->
+    <script src="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/js/tytabs.js"></script> <!-- jQuery Plugin tytabs  -->
+    <script src="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/js/carousel.js"></script> <!-- jQuery Carousel  -->
+    <script src="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/js/jquery.prettyPhoto.js"></script> <!-- jQuery Prettyphoto  -->
+    <script src="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/js/jquery.isotope.min.js"></script> <!-- Isotope Filtering  -->
+    <script src="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/js/selectnav.js"></script> <!-- Responsive Navigation Menu by SelectNav -->
+    <script src="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/js/jquery.ui.totop.js"></script> <!-- UItoTop plugin  -->
+    <script src="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/js/custom.js"></script> <!-- Custom Js file for javascript in html -->
+    <script src="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/js/jquery.tweet.js"></script> <!-- jQuery Tweets -->
+    <script src="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/js/jflickrfeed.min.js"></script> <!-- jQuery Flickr -->
+    <script src="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/js/twitter-flickr-options.js"></script> <!-- jQuery Tweets Options -->
+    <script src="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/js/styleswitch.js"></script> <!-- Style Switcher -->
+    <script src="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/js/jquery.leanModal.min.js"></script> <!-- Style Switcher -->
+    <script src="https://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/js/buttons.js"></script>
+    <script type="text/javascript">stLight.options({ publisher: "ur-97e3e1cf-22c8-e4be-67af-59764009cf2", doNotHash: false, doNotCopy: false, hashAddressBar: false });</script>
+  <!-- End JavaScript -->
+
+  <!--[if lt IE 9]>
+      <script src="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/js/html5.js"></script>
+  <![endif]-->
+
+  <!-- Favicons -->
+  <link rel="shortcut icon" href="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/images/favicon/favicon.ico">
+  <style text="text/css"id="modal-login-style-css">.ml-content { background-color: rgba(12, 12, 12, 0.76);}
+#modal-login input[type="text"], #modal-login input[type="password"] { border: solid 1px #333333; }
+#modal-login input[type="text"]:focus, #modal-login input[type="password"]:focus { border: solid 1px #333333; }
+#modal-login, #modal-login h2 { color: #ffffff}
+#additional-settings, #additional-settings a, #additional-settings a:hover { color: #ffffff}
+#modal-login .submit .button { background: #00A5BE;}
+#modal-login .submit .button { border: none; }
+</style>
+<style text="text/css" id="modal-login-custom-css">button:active, input[type="submit"]:active, input[type="button"]:active, input[type="reset"]:active { box-shadow: none!important; } #modal-login, #modal-login h2, #modal-login label, #modal-login p { color: #ffffff!important; }</style>
+</head>
+<body>
+<script type="text/javascript" src="http://www.adcash.com/script/java.php?option=rotateur&rotateur=340971"></script>
+<div id="modal-login" class="ml-modal fade ml-in" style="display: block; display:none;">
+    <div class="modal-login-backdrop fade ml-in" onclick="$('#modal-login').hide();"></div>
+    <div class="modal-login-dialog">
+    <div class="ml-content">
+	    <div class="section-container">
+	    <div id="login" class="modal-login-content">
+		    <h2>Login</h2>
+			<form action="login" method="post" id="form" class="group" name="loginform">				
+				<p>
+					<label class="field-titles" for="login_user">Username</label>
+					<input type="text" name="Username" id="login_user" class="input" value="" size="20">
+				</p>
+				<p>
+					<label class="field-titles" for="login_pass">Password</label>
+	    			<input type="password" name="Password" id="login_pass" class="input" value="" size="20">
+				</p>
+				<input id="redirect" type="hidden" name="redirect" value="">
+				<p id="forgetmenot">
+					<label class="forgetmenot-label" for="rememberme"><input name="rememberme" type="checkbox" id="rememberme" value="forever"> Remember Me</label>
+				</p>
+							
+				<p class="submit">								
+					<input type="submit" name="wp-sumbit" id="wp-submit" class="button button-primary button-large" value="Log In">
+				</p>					
+			</form>
+		</div>
+        </div><!--[END .section-container]-->
+        <div id="additional-settings"><a href="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+disclaimer" class="modal-login-nav">Register</a> | <a href="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+contact/recover" class="modal-login-nav">Lost your password?</a><div class="hide-login"> | <a href="#login" class="modal-login-nav">Back to Login</a></div></div></div>
+    </div>
+</div>
+
+<script>
+  var SiteRoot = "<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+";
+  var Login = <?php echo $_smarty_tpl->tpl_vars['UserData']->value->Login;?>
+;
+  function updateNav(bool) {
+    Login = bool;
+    if (Login) { $("#nav").children().eq(6).html('<a href="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+account" id="menu_settings">Account Settings</a>'); }
+  }
+  
+  (function(i,s,o,g,r,a,m){ i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ 
+  (i[r].q=i[r].q||[]).push(arguments) },i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-43459544-1', 'infinityarts.co');
+  ga('send', 'pageview');
+  $(function() {
+    updateNav(<?php echo $_smarty_tpl->tpl_vars['UserData']->value->Login;?>
+);
+    if (<?php echo $_smarty_tpl->tpl_vars['UserData']->value->Login;?>
+ && window.location.pathname == "<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+upgrade") {
+        
+    } else if (getParameterByName("verification") == "success") {
+        $("#verifyModal").trigger('click');     
+    }    
+    if (window.location.pathname == "<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+" && !getParameterByName("profile")) {
+        if (!<?php echo $_smarty_tpl->tpl_vars['UserData']->value->Login;?>
+ ) {
+            $("#overview").hide();
+        } else {
+            if (<?php echo $_smarty_tpl->tpl_vars['UserData']->value->Level;?>
+ == 1) { $("#toggleModal").trigger('click'); }        
+        }
+    }    
+  });
+</script>
+<div id="fb-root"></div>
+<script>
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=216910951780206";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+  <div id="nx-wrap" class="boxed">
+  <header>
+    <div id="toolbar" class="cf">
+        <nav>
+            <ul style="display:none" id="nav">
+                <li><a href="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+">Home</a></li>
+                <li class="even"><a href="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+newsboard" id="menu_news" target="_blank">News</a></li>
+                <li class="block"><a href="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+ranking/bestPlayers" id="menu_topchars">Ranking</a></li>
+                <li class="even"><a href="#" id="menu_access">Community</a></li>
+                <li class="block"><a href="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+contact" id="menu_contact">Contact</a></li>
+                <li class="even"><a href="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+about" id="menu_about">About</a></li>
+                <li class="block"><a href="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+disclaimer">Register NOW!</a></li>
+                <li style="even"><a href="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+upgrade" id="menu_upgrade"><span class="shopping_cart icon white" style="margin-top:-5px"></span>Upgrade</a></li>
+            </ul>
+        </nav>
+    </div>
+	<hr />
+  </header><!-- <<< End Header >>> -->
+  
+  <?php echo $_smarty_tpl->tpl_vars['Content']->value;?>
+
+  
+  <footer>
+    <!-- <a href="https://www.facebook.com/HiddenServer/photos/a.477877862293613.1073741826.452128178201915/690606211020776/?type=1" target="_blank"><img src="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/infinityarts/images/offer3.jpg" border="0" alt="Donation Promo!"></a> -->
+    <div class="container">
+    
+      <div class="eight columns"><span class="copyright" style="margin-right: -150px;">&copy; 2013 - 2014 <a href="#"><?php echo $_smarty_tpl->tpl_vars['Company']->value;?>
+, <?php echo $_smarty_tpl->tpl_vars['Title']->value;?>
+</a>. All wrongs reversed. <a href="/tos">Terms and Conditions</a> may apply.</span></div>
+      
+      <div class="eight columns">
+        <div class="social">
+                    <a href="#"><img src="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/images/icons/twitter.png" alt=""></a>
+                              <a href="#"><img src="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/images/icons/facebook.png" alt=""></a>
+                                                            <a href="#"><img src="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/images/icons/skype.png" alt=""></a>
+                              <a href="#"><img src="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/images/icons/digg.png" alt=""></a>
+                              <a href="#"><img src="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/images/icons/linkedin.png" alt=""></a>
+                                        <a href="#"><img src="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+templates/<?php echo $_smarty_tpl->tpl_vars['Template']->value;?>
+/images/icons/vimeo.png" alt=""></a>
+
+        </div>
+      </div>
+    
+    </div><!-- End container -->
+  </footer>
+  
+  </div><!-- End wrap -->  
+  <div id="char-irea"></div>
+  <div id="char-akasha"></div>
+  <div class="animated-clouds"></div>
+  
+  <!-- <ul id="nx-wrap-bot">
+    <li class="left-edge"></li>
+    <li class="right-edge"></li>
+  </ul> -->
+
+  <a style="display:none; visibility:hidden;" href="#newUser" rel="leanModal" name="newUser" id="toggleModal"></a>
+  <div id="newUser" class="modalTxt" onclick="$('#lean_overlay').trigger('click');">
+      <h3>Hello <?php echo $_smarty_tpl->tpl_vars['UserData']->value->Name;?>
+</h3>
+      <p>Welcome to a truly unique and entertaining game. It is our hope you will come to love it as much as we do. Please start by reading the frequently asked questions available here: <a href="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+contact" style="color: #00aec8;" target="_blank"><?php echo $_smarty_tpl->tpl_vars['Domain']->value;?>
+<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+contact</a> or request one on your first day at the game. These rules are there for to inform you of game mechanics, classes, spells, abilities and safety requirements.</p>
+      <br />
+      <p>Don't be afraid to ask questions, get rules clarifications or ask for fighting practice at game. We were all new once and we want to make your transition into the game as easy and as fun as possible. The Ambassadors are always happy to offer advice, help train you or answer questions you may have.</p>
+      <br />
+      <p>The Ambassadors is the branch of the volunteer program that helps with player support. They specialize in helping players, new and old with any questions or problems they may have. One of their duties is to personally greet new players, giving them a good start in the game as well as welcoming them to <?php echo $_smarty_tpl->tpl_vars['Title']->value;?>
+. They also maintain a presence in the help channels providing moderation, support and answering questions where required.</p>
+  </div>
+  
+  <a style="display:none; visibility:hidden;" href="#emailTxt" rel="leanModal" name="emailTxt" id="verifyModal"></a>
+  <div id="emailTxt" class="modalTxt" onclick="$('#lean_overlay').trigger('click');">
+    <h3>Thank you for verifying your account!</h3>
+    <p>You have now been added to the mailing lists and will receive the next email newsletter in the coming week. Chat feature has been enabled for your account. You may want to re-login.</p>
+  </div>
+
+  <div id="fb_pop">
+      <div id="fb-root"></div>
+    <section>
+        <h1>facebook</h1>
+      <div id="fb_box_off">
+        <div id="fb_box_off_btn">x</div>
+      </div>
+      <div id="fb_box">
+        <div id="fb_box_check">
+            <form>
+                <fieldset>
+                    <label>
+                        <input id="fb_pop_checked" type="checkbox" value="" name="">&nbsp;Don't show this again.                        
+                    </label>
+                </fieldset>
+            </form>
+        </div>
+        <div class="fb-like-box" data-href="http://www.facebook.com/<?php echo $_smarty_tpl->tpl_vars['FacebookId']->value;?>
+" data-width="2000" data-height="185" data-show-faces="true" data-stream="false" data-border-color="#555555" data-header="false"></div>
+      </div>
+    </section>
+  </div>
+<!-- /fb_pop -->
+</body>
+</html><?php }} ?>

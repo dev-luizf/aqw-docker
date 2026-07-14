@@ -1,0 +1,225 @@
+STATUS | wrapper  | 2009/04/21 11:26:25 | --> Wrapper Started as Service
+STATUS | wrapper  | 2009/04/21 11:26:25 | Launching a JVM...
+INFO   | jvm 1    | 2009/04/21 11:26:28 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2009/04/21 11:26:28 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2009/04/21 11:26:28 | 
+INFO   | jvm 1    | 2009/04/21 11:26:33 | *sys-package-mgr*: processing modified jar, 'C:\Documents and Settings\Lapo\Desktop\sfs-166-dist\Server\lib\jysfs.jar'
+INFO   | jvm 1    | 2009/04/21 11:26:36 | |::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
+INFO   | jvm 1    | 2009/04/21 11:26:36 | |                                                            |
+INFO   | jvm 1    | 2009/04/21 11:26:36 | |              ...:::  SmartFoxServer :::...                 |
+INFO   | jvm 1    | 2009/04/21 11:26:36 | |                Multiplayer Socket Server                   |
+INFO   | jvm 1    | 2009/04/21 11:26:36 | |                      version 1.6.6                         |
+INFO   | jvm 1    | 2009/04/21 11:26:36 | |                           ---                              |
+INFO   | jvm 1    | 2009/04/21 11:26:36 | |              (c) 2004 - 2009 gotoAndPlay()                 |
+INFO   | jvm 1    | 2009/04/21 11:26:36 | |                  www.smartfoxserver.com                    |
+INFO   | jvm 1    | 2009/04/21 11:26:36 | |                    www.gotoandplay.it                      |
+INFO   | jvm 1    | 2009/04/21 11:26:36 | |                                                            |
+INFO   | jvm 1    | 2009/04/21 11:26:36 | |::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
+INFO   | jvm 1    | 2009/04/21 11:26:36 | 
+INFO   | jvm 1    | 2009/04/21 11:26:40 | ::::::::::: { BlueBox INITED } ::::::::::::
+INFO   | jvm 1    | 2009/04/21 11:26:40 | :                                         :
+INFO   | jvm 1    | 2009/04/21 11:26:40 | : Version 1.0.5 -- (c) 2008 gotoAndPlay() :
+INFO   | jvm 1    | 2009/04/21 11:26:40 | :                                         :
+INFO   | jvm 1    | 2009/04/21 11:26:40 | :::::::::::::::::::::::::::::::::::::::::::
+INFO   | jvm 1    | 2009/04/21 11:26:41 | 11:26:41.968 - [ INFO ] > Starting h2 engine...
+INFO   | jvm 1    | 2009/04/21 11:26:44 | 
+INFO   | jvm 1    | 2009/04/21 11:26:44 | 
+INFO   | jvm 1    | 2009/04/21 11:26:44 | --- [ System Info ] ------------------------------------------
+INFO   | jvm 1    | 2009/04/21 11:26:44 | 
+INFO   | jvm 1    | 2009/04/21 11:26:44 | System CPU(s): 1
+INFO   | jvm 1    | 2009/04/21 11:26:44 | VM Max memory: 66 MB
+INFO   | jvm 1    | 2009/04/21 11:26:44 | 
+INFO   | jvm 1    | 2009/04/21 11:26:44 | os.name: Windows XP
+INFO   | jvm 1    | 2009/04/21 11:26:44 | os.arch: x86
+INFO   | jvm 1    | 2009/04/21 11:26:44 | os.version: 5.1
+INFO   | jvm 1    | 2009/04/21 11:26:44 | java.version: 1.6.0_13
+INFO   | jvm 1    | 2009/04/21 11:26:44 | java.vendor: Sun Microsystems Inc.
+INFO   | jvm 1    | 2009/04/21 11:26:44 | java.vendor.url: http://java.sun.com/
+INFO   | jvm 1    | 2009/04/21 11:26:44 | java.vm.specification.version: 1.0
+INFO   | jvm 1    | 2009/04/21 11:26:44 | java.vm.version: 11.3-b02
+INFO   | jvm 1    | 2009/04/21 11:26:44 | java.vm.vendor: Sun Microsystems Inc.
+INFO   | jvm 1    | 2009/04/21 11:26:44 | java.vm.name: Java HotSpot(TM) Server VM
+INFO   | jvm 1    | 2009/04/21 11:26:44 | 
+INFO   | jvm 1    | 2009/04/21 11:26:44 | 
+INFO   | jvm 1    | 2009/04/21 11:26:44 | --- [ Network Cards ] -----------------------------------------
+INFO   | jvm 1    | 2009/04/21 11:26:44 | 
+INFO   | jvm 1    | 2009/04/21 11:26:44 | Card:MS TCP Loopback interface
+INFO   | jvm 1    | 2009/04/21 11:26:44 |  -> 127.0.0.1
+INFO   | jvm 1    | 2009/04/21 11:26:44 | Card:Hamachi Network Interface
+INFO   | jvm 1    | 2009/04/21 11:26:44 |  -> 5.175.220.62
+INFO   | jvm 1    | 2009/04/21 11:26:44 | Card:Scheda Ethernet Realtek basata su RTL8029(AS) (generica) #2 - Miniport dell'Utilità di pianificazione pacchetti
+INFO   | jvm 1    | 2009/04/21 11:26:44 |  -> 192.168.0.3
+INFO   | jvm 1    | 2009/04/21 11:26:45 | 
+INFO   | jvm 1    | 2009/04/21 11:26:45 | 
+INFO   | jvm 1    | 2009/04/21 11:26:45 | --- [ Licence Loaded ] ------------------------------------
+INFO   | jvm 1    | 2009/04/21 11:26:45 | 
+INFO   | jvm 1    | 2009/04/21 11:26:45 | License Type 	-> PRO
+INFO   | jvm 1    | 2009/04/21 11:26:45 | License Owner 	-> --== Free Demo Licence ==--
+INFO   | jvm 1    | 2009/04/21 11:26:45 | Max. Clients 	-> 20
+INFO   | jvm 1    | 2009/04/21 11:26:45 | BlueBox Type 	-> Demo Version
+INFO   | jvm 1    | 2009/04/21 11:26:45 | 
+INFO   | jvm 1    | 2009/04/21 11:26:45 | --- [ Zones & Rooms ] -------------------------------------
+INFO   | jvm 1    | 2009/04/21 11:26:45 | 
+INFO   | jvm 1    | 2009/04/21 11:26:46 | 11:26:45.953 - [ INFO ] > Default Buddy List Persister <INITED>
+INFO   | jvm 1    | 2009/04/21 11:26:46 | Zone: simpleChat
+INFO   | jvm 1    | 2009/04/21 11:26:46 | 
+INFO   | jvm 1    | 2009/04/21 11:26:46 | 	The Hall           (id: 1, max: 50, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:46 | 	The Kitchen        (id: 2, max: 50, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:46 | 	The Garden         (id: 3, max: 50, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:46 | 	The Bathroom       (id: 4, max: 50, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:46 | 	The Garage         (id: 5, max: 50, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:46 | 	The Living Room    (id: 6, max: 50, pass:Y)
+INFO   | jvm 1    | 2009/04/21 11:26:48 | 11:26:47.328 - [ INFO ] > Zone Extension [ json ] created, for zone:simpleChat
+INFO   | jvm 1    | 2009/04/21 11:26:48 | [jsonSample.as]: JSON Example initialized
+INFO   | jvm 1    | 2009/04/21 11:26:48 | 
+INFO   | jvm 1    | 2009/04/21 11:26:48 | 11:26:47.359 - [ INFO ] > Default Buddy List Persister <INITED>
+INFO   | jvm 1    | 2009/04/21 11:26:48 | Zone: dbZone
+INFO   | jvm 1    | 2009/04/21 11:26:48 | 
+INFO   | jvm 1    | 2009/04/21 11:26:48 | 	MainRoom           (id: 7, max: 10, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:48 | 11:26:48.109 - [ INFO ] > Zone Extension [ dbTest ] created, for zone:dbZone
+INFO   | jvm 1    | 2009/04/21 11:26:48 | [dbExtension.as]: Initing dbExtension
+INFO   | jvm 1    | 2009/04/21 11:26:48 | [dbExtension.as]: DB Manager is not active in this Zone!
+INFO   | jvm 1    | 2009/04/21 11:26:48 | 11:26:48.671 - [ INFO ] > Zone Extension [ dbTestAdv ] created, for zone:dbZone
+INFO   | jvm 1    | 2009/04/21 11:26:48 | [dbExtensionAdv.as]: DB Manager is not active in this Zone!
+INFO   | jvm 1    | 2009/04/21 11:26:49 | 11:26:49.296 - [ INFO ] > Zone Extension [ simpleExt ] created, for zone:dbZone
+INFO   | jvm 1    | 2009/04/21 11:26:49 | [simpleExt.as]: Hello from the Simple Extension Example!
+INFO   | jvm 1    | 2009/04/21 11:26:49 | 
+INFO   | jvm 1    | 2009/04/21 11:26:49 | Zone: sftris
+INFO   | jvm 1    | 2009/04/21 11:26:49 | 
+INFO   | jvm 1    | 2009/04/21 11:26:49 | 	The Entrance       (id: 8, max: 50, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:49 | 
+INFO   | jvm 1    | 2009/04/21 11:26:49 | Zone: mazeGame
+INFO   | jvm 1    | 2009/04/21 11:26:49 | 
+INFO   | jvm 1    | 2009/04/21 11:26:49 | 	The Entrance       (id: 9, max: 50, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:49 | 
+INFO   | jvm 1    | 2009/04/21 11:26:49 | Zone: loginZone
+INFO   | jvm 1    | 2009/04/21 11:26:49 | 
+INFO   | jvm 1    | 2009/04/21 11:26:49 | 	The Hall           (id: 10, max: 50, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:49 | 11:26:49.656 - [ INFO ] > Zone Extension [ loginEx ] created, for zone:loginZone
+INFO   | jvm 1    | 2009/04/21 11:26:49 | 
+INFO   | jvm 1    | 2009/04/21 11:26:49 | Zone: multiChat
+INFO   | jvm 1    | 2009/04/21 11:26:49 | 
+INFO   | jvm 1    | 2009/04/21 11:26:49 | 	Main Lobby         (id: 11, max: 50, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:49 | 
+INFO   | jvm 1    | 2009/04/21 11:26:49 | Zone: yahtzee
+INFO   | jvm 1    | 2009/04/21 11:26:49 | 
+INFO   | jvm 1    | 2009/04/21 11:26:49 | 	The Entrance       (id: 12, max: 50, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:49 | 
+INFO   | jvm 1    | 2009/04/21 11:26:49 | Zone: slogin
+INFO   | jvm 1    | 2009/04/21 11:26:49 | 
+INFO   | jvm 1    | 2009/04/21 11:26:49 | 	The Lobby          (id: 13, max: 50, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:49 | 	The Garden         (id: 14, max: 50, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:49 | 	The Swimming Pool  (id: 15, max: 50, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:50 | 11:26:50.031 - [ INFO ] > Zone Extension [ slogin ] created, for zone:slogin
+INFO   | jvm 1    | 2009/04/21 11:26:50 | 
+INFO   | jvm 1    | 2009/04/21 11:26:50 | Zone: pixel
+INFO   | jvm 1    | 2009/04/21 11:26:50 | 
+INFO   | jvm 1    | 2009/04/21 11:26:50 | 	The Basement       (id: 16, max: 4, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:51 | 11:26:50.484 - [ INFO ] > Zone Extension [ pixel ] created, for zone:pixel
+INFO   | jvm 1    | 2009/04/21 11:26:51 | [pixelGame.as]: PixelGame extension started!
+INFO   | jvm 1    | 2009/04/21 11:26:51 | 
+INFO   | jvm 1    | 2009/04/21 11:26:51 | Zone: letters
+INFO   | jvm 1    | 2009/04/21 11:26:51 | 
+INFO   | jvm 1    | 2009/04/21 11:26:51 | 	Main               (id: 17, max: 50, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:51 | 11:26:50.828 - [ INFO ] > Zone Extension [ Letters ] created, for zone:letters
+INFO   | jvm 1    | 2009/04/21 11:26:51 | [Letters.as]: Letters script running.
+INFO   | jvm 1    | 2009/04/21 11:26:51 | 
+INFO   | jvm 1    | 2009/04/21 11:26:51 | 11:26:50.890 - [ INFO ] > Default Buddy List Persister <INITED>
+INFO   | jvm 1    | 2009/04/21 11:26:51 | Zone: messenger
+INFO   | jvm 1    | 2009/04/21 11:26:51 | 
+INFO   | jvm 1    | 2009/04/21 11:26:51 | 	Main               (id: 18, max: 40, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:51 | 11:26:51.015 - [ INFO ] > Zone Extension [ smsg ] created, for zone:messenger
+INFO   | jvm 1    | 2009/04/21 11:26:51 | 
+INFO   | jvm 1    | 2009/04/21 11:26:51 | Zone: imgMan
+INFO   | jvm 1    | 2009/04/21 11:26:51 | 
+INFO   | jvm 1    | 2009/04/21 11:26:51 | 	MainLobby          (id: 19, max: 50, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:51 | 11:26:51.187 - [ INFO ] > Zone Extension [ imgman ] created, for zone:imgMan
+INFO   | jvm 1    | 2009/04/21 11:26:51 | [imageManager.as]: Image Manager extension starts...
+INFO   | jvm 1    | 2009/04/21 11:26:51 | 
+INFO   | jvm 1    | 2009/04/21 11:26:51 | Zone: bomberman
+INFO   | jvm 1    | 2009/04/21 11:26:51 | 
+INFO   | jvm 1    | 2009/04/21 11:26:51 | 	Lobby              (id: 20, max: 50, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:51 | 
+INFO   | jvm 1    | 2009/04/21 11:26:51 | 	DB Manager Activated ( org.h2.Driver )
+INFO   | jvm 1    | 2009/04/21 11:26:51 | Zone: h2dbzone
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 	Lobby              (id: 21, max: 10, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 11:26:52.015 - [ INFO ] > Zone Extension [ h2db_ext ] created, for zone:h2dbzone
+INFO   | jvm 1    | 2009/04/21 11:26:52 | [internalDbDemo.as]: Initing dbExtension
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 
+INFO   | jvm 1    | 2009/04/21 11:26:52 | Zone: advBuddyList
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 	Lobby              (id: 22, max: 10000, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 
+INFO   | jvm 1    | 2009/04/21 11:26:52 | Zone: sloader
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 	Lobby              (id: 23, max: 10000, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 11:26:52.125 - [ INFO ] > Zone Extension [ loader ] created, for zone:sloader
+INFO   | jvm 1    | 2009/04/21 11:26:52 | [ it.gotoandplay.extensions.examples.SocketFileLoader ]: Socket File Loader -- Started!
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 
+INFO   | jvm 1    | 2009/04/21 11:26:52 | Zone: SmartVideoClipPlayer
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 	The Lobby          (id: 24, max: 50, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 11:26:52.125 - [ INFO ] > Zone Extension [ __$RedBox$__ ] created, for zone:SmartVideoClipPlayer
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 11:26:52.265 - [ INFO ] > [RedBox] RedBox's AVChatManager initialized
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 11:26:52.296 - [ INFO ] > [RedBox] RedBox's AVClipManager initialized and a/v clips list created (4 clips found)
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 11:26:52.296 - [ INFO ] > [RedBox] Extension initialized
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 11:26:52.296 - [ INFO ] > Default Buddy List Persister <INITED>
+INFO   | jvm 1    | 2009/04/21 11:26:52 | Zone: SmartMessengerAV
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 	Main               (id: 25, max: 40, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 11:26:52.296 - [ INFO ] > Zone Extension [ smsg ] created, for zone:SmartMessengerAV
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 11:26:52.296 - [ INFO ] > Zone Extension [ __$RedBox$__ ] created, for zone:SmartMessengerAV
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 11:26:52.312 - [ INFO ] > [RedBox] RedBox's AVChatManager initialized
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 11:26:52.312 - [ INFO ] > [RedBox] RedBox's AVClipManager initialized and a/v clips list created (0 clips found)
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 11:26:52.312 - [ INFO ] > [RedBox] Extension initialized
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 
+INFO   | jvm 1    | 2009/04/21 11:26:52 | Zone: SmartChatAV
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 	The Hall           (id: 26, max: 50, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 	The Kitchen        (id: 27, max: 50, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 	The Garden         (id: 28, max: 50, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 	The Bathroom       (id: 29, max: 50, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 	The Garage         (id: 30, max: 50, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 11:26:52.312 - [ INFO ] > Zone Extension [ __$RedBox$__ ] created, for zone:SmartChatAV
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 11:26:52.312 - [ INFO ] > [RedBox] RedBox's AVChatManager initialized
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 11:26:52.312 - [ INFO ] > [RedBox] RedBox's AVClipManager initialized and a/v clips list created (0 clips found)
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 11:26:52.312 - [ INFO ] > [RedBox] Extension initialized
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 
+INFO   | jvm 1    | 2009/04/21 11:26:52 | Zone: SmartVideoConference
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 	Conference hall 1  (id: 31, max: 10, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 	Conference hall 2  (id: 32, max: 10, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 	Conference hall 3  (id: 33, max: 10, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 
+INFO   | jvm 1    | 2009/04/21 11:26:52 | Zone: openspace
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 	Ranch (inside)     (id: 34, max: 50, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 	Ranch (outside)    (id: 35, max: 50, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 	Slopes area        (id: 36, max: 50, pass:N)
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 
+INFO   | jvm 1    | 2009/04/21 11:26:52 | --- [ Server Starting ] ---------------------------------
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 
+INFO   | jvm 1    | 2009/04/21 11:26:52 | Server address: All
+INFO   | jvm 1    | 2009/04/21 11:26:52 | Server port   : 9339
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 11:26:52.546 - [ INFO ] > [TaskScheduler] ... started ::
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 11:26:52.546 - [ INFO ] > [BlueBoxHandler]... started :: 
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 11:26:52.546 - [ INFO ] > [EventWriter] ..... started :: 1 thread(s)
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 11:26:52.546 - [ INFO ] > [SystemHandler] ... started :: 1 thread(s)
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 11:26:52.546 - [ INFO ] > [ExtensionHandler]. started :: 1 thread(s)
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 11:26:52.546 - [ INFO ] > [DeadChannelsPolicy: strict]
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 11:26:52.546 - [ INFO ] > Server is up and running!
+INFO   | jvm 1    | 2009/04/21 11:26:52 | [dbExtension.as]: Event received: serverReady
+INFO   | jvm 1    | 2009/04/21 11:26:52 | [simpleExt.as]: Event received: serverReady
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 11:26:52.562 - [ INFO ] > [RedBox] Internal event received: serverReady
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 11:26:52.562 - [ INFO ] > [RedBox] Internal event received: serverReady
+INFO   | jvm 1    | 2009/04/21 11:26:52 | 11:26:52.562 - [ INFO ] > [RedBox] Internal event received: serverReady
+INFO   | jvm 1    | 2009/04/21 11:27:04 | 
+INFO   | jvm 1    | 2009/04/21 11:27:04 | 
+INFO   | jvm 1    | 2009/04/21 11:27:04 | Shutting down server...
+INFO   | jvm 1    | 2009/04/21 11:27:04 | 
+STATUS | wrapper  | 2009/04/21 11:27:06 | <-- Wrapper Stopped

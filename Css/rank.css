@@ -1,0 +1,104 @@
+@charset "windows-1257";
+#topo {
+	width: auto;
+	height: auto;
+	background-color: #000;
+	background-attachment: fixed;
+	color: #FFF;
+}
+#topo #logo {
+	height: auto;
+	width: auto;
+	float: left;
+	margin-top: 5px;
+}
+
+
+
+
+
+body {
+	background-color: #000;
+	background-attachment: fixed;
+	background-image: url(../imgs/aqw.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+#topo .menu .menu-list #online {
+	padding-top: 20px;
+	float: right;
+	color: #0F0;
+	margin-right: 20px;
+}
+#conteudo {
+	color: #000;
+	width: 1000px;
+	height: auto;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #FFF;
+	margin-top: 10px;
+	padding-bottom: 10px;
+}
+#conteudo #banner {
+	height: 250px;
+	width: 970px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 10px;
+}
+
+
+
+
+
+
+
+
+.menu {
+	margin-left: 100px;
+	width: auto;
+	height: auto;
+}
+#rodape {
+	margin-right: auto;
+	margin-left: auto;
+	height: 35px;
+	width: 1000px;
+	background-color: #666;
+}
+#rodape #overworlds {
+	margin-right: auto;
+	margin-left: auto;
+	width: 400px;
+	padding-top: 7px;
+}
+#conteudo #play {
+	margin-right: auto;
+	margin-left: auto;
+	width: 970px;
+	margin-top: 40px;
+	height: auto;
+	margin-bottom: 0px;
+}
+#conteudo #ranking {
+	width: 970px;
+	height: auto;
+	margin-top: 40px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#conteudo #ranking table tr th a {
+	color: #F00;
+	text-decoration: none;
+}
+
+#conteudo #ranking #text {
+	margin-right: auto;
+	margin-left: auto;
+	width: 200px;
+	padding-bottom: 30px;
+	color: #F00;
+	font-weight: bold;
+	font-size: 24px;
+}

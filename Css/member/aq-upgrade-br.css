@@ -1,0 +1,16 @@
+/* CSS Document */
+.sprite {background-image:url(../../images/member/sprite-packages-br1.png)}
+.sprite-bonus {background-image:url(../../images/member/sprite-bonus-br.png);}
+.sprite-bonus-2k {background-image:url(../../images/member/sprite-bonus-2k-br.png);}
+.aButton{margin:0 auto;}
+.ab1{margin-top:0;}
+.ab5{background-position:-428px -749px;margin-top:5px;}
+.ab6{background-position:-428px -783px;}
+.ab5:hover{background-position:-428px -817px}
+.ab6:hover{background-position:-428px -851px;}
+
+.mBuyNow{height:28px;background-position:-1px -1px;}
+.price:before {
+content: "R$"; }
+
+form { display:inline; }

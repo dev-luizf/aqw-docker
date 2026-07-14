@@ -1,0 +1,41 @@
+<?php /* Smarty version Smarty-3.1.16, created on 2014-06-10 05:01:24
+         compiled from ".\templates\infinityarts\template.notfound.html" */ ?>
+<?php /*%%SmartyHeaderCode:172625396f394424509-62033450%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '4522f1dd76758649df199258ed3381bb4d967d9f' => 
+    array (
+      0 => '.\\templates\\infinityarts\\template.notfound.html',
+      1 => 1389097537,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '172625396f394424509-62033450',
+  'function' => 
+  array (
+  ),
+  'variables' => 
+  array (
+    'Root' => 0,
+  ),
+  'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.16',
+  'unifunc' => 'content_5396f39442a7a3_93948073',
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_5396f39442a7a3_93948073')) {function content_5396f39442a7a3_93948073($_smarty_tpl) {?>  <div class="container clearfix">
+    <div class="sixteen columns bottom">
+    <h1 class="page-title">404 / <span class="gray2">Page Not Found</span><span class="line"></span></h1> </div>    <!-- Page Title -->  
+    <div id="description">
+      <div class="sixteen columns">
+        <div class="description bottom">
+        <h1 class="big">404</h1>
+        <p class="bottom-2">
+         The page you are looking for doesn't seem to exist.
+        </p>
+        <a href="<?php echo $_smarty_tpl->tpl_vars['Root']->value;?>
+" class="button medium black">Back To Home</a> 
+        </div>
+      </div>
+    </div><!-- End description -->
+  </div><?php }} ?>

@@ -1,0 +1,100 @@
+*, input, form{
+	font-family: "Open Sans", "Helvetica Neue", "Arial", sans;
+	}
+
+body {
+	margin: 0;
+	padding: 0;
+	background: #EEE;
+	text-align: center;
+	}
+#tudo {
+	width: 400px;
+	margin: 0 auto;			
+	text-align: left;
+	}
+#conteudo {
+	min-height: 100px;
+	padding: 20px 10px 20px 10px;
+	background-color: #FFF;
+	top: 50%;
+	left: 50%;
+	}
+	
+.shadow {
+	box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.5);
+	}
+
+input[type="text"], input[type="password"] {
+	color: black;
+	background: #EEE;
+	margin-bottom: 5px;
+	padding: 5px 5px 5px 5px;
+	}
+	
+input[type="submit"]{
+	background: #00aec8;
+	color: #FFF;
+	border-width: 0px 0;
+	border-style: solid none;
+	border-color: transparent;
+	padding: 5px 5px 5px 5px;
+	margin:5px 0;
+	border:0;
+	cursor: pointer;
+	}
+	
+input[type="submit"]:hover {
+	background:#35bdd1;
+	}
+	
+a {
+	text-decoration: none;
+	}
+	
+p, form {
+	display: inline;
+	}
+	
+.sepb{
+	width: 50px;
+	}
+	
+.lgcf {
+	float: right
+	}
+	
+.error{
+	background: red;
+	padding: 5px 5px 5px 5px;
+	text-align: center;
+	border: 1px;
+	font-size: 12px;
+	background-color: #fff1f2;
+	color: #c98f92;
+	width: 94.5%;
+	}
+	
+.success {
+	background: red;
+	padding: 5px 5px 5px 5px;
+	text-align: center;
+	border: 1px;
+	font-size: 12px;
+	background-color: #f4ffdf;
+	color: #94b654;
+	width: 94.5%;
+	}
+	
+.notice {
+	background: red;
+	padding: 5px 5px 5px 5px;
+	text-align: center;
+	border: 1px;
+	font-size: 12px;
+	background-color: #fdf7d5;
+	color: #c49a51;
+	width: 94.5%;
+	}
