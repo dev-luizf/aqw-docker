@@ -817,7 +817,7 @@ def main() -> None:
                 ("NewMenuViewer_80", "frame42"),
             },
         ),
-        (root / "maps" / "Battleon" / "YulgarV4.swf", {("Btn_140", "frame1")}),
+        (root / "maps" / "battleon" / "YulgarV4.swf", {("Btn_140", "frame1")}),
     ]
     menu_targets = {
         ("comp_73", "frame2"),
@@ -838,7 +838,7 @@ def main() -> None:
         jobs.append((menu, menu_targets))
     # Yulgar aliases (real files only)
     for name in ("Eyulgaraw.swf", "Christmasyulgar.swf"):
-        p = root / "maps" / "Battleon" / name
+        p = root / "maps" / "battleon" / name
         if p.exists() and not p.is_symlink():
             jobs.append((p, {("Btn_140", "frame1")}))
     # Do not stub Greenguard MainTimeline scripts. Those frames assign setup

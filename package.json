@@ -12,6 +12,12 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
+    "docker:build": "docker compose build",
+    "docker:rebuild": "docker compose build --no-cache",
+    "docker:up": "docker compose up --build --detach",
+    "docker:down": "docker compose down --remove-orphans",
+    "docker:restart": "docker compose restart",
+    "docker:logs": "docker compose logs --follow --tail=200",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "tsx lib/db/migrate.ts"
   },

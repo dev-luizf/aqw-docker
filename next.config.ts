@@ -21,6 +21,10 @@ const nextConfig: NextConfig = {
       beforeFiles: [
         { source: "/game/api/login/now", destination: "/api/login/now" },
         {
+          source: "/gamefiles/newuser/registration.swf",
+          destination: "/gamefiles/newuser/AW-Registration.swf",
+        },
+        {
           source: "/gamefiles/loaders/api/login/now",
           destination: "/api/login/now",
         },

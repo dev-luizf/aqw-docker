@@ -121,7 +121,7 @@ def main() -> None:
     )
     parser.add_argument(
         "--registration",
-        default="newuser/registration.swf",
+        default="newuser/AW-Registration.swf",
         help="gamefiles-relative registration SWF path",
     )
     parser.add_argument("--no-backup", action="store_true")
