@@ -71,7 +71,7 @@ const starterItems: Record<number, Array<[number, number, number, number]>> = {
     [974, 0, 0, 3],
   ],
   3: [[3, 1957, 1, 1]],
-  4: [[2008451, 1957, 1, 1]],
+  4: [[4, 1957, 1, 1]],
   5: [[975, 1957, 1, 1]],
 };
 
