@@ -4,6 +4,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 
 import { LoginForm } from "@/components/account/login-form";
+import { PageContainer } from "@/components/page-container";
 import {
   Card,
   CardContent,
@@ -20,23 +21,28 @@ export default async function LoginPage() {
   if (session) redirect("/account");
 
   return (
-    <main className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-lg items-center px-4 py-12">
-      <Card className="fantasy-panel w-full">
-        <CardHeader>
-          <CardTitle className="text-3xl">Manage account</CardTitle>
-          <CardDescription>
-            Sign in with the same username and password used by the game client.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <LoginForm />
-          <div className="mt-6 text-center text-sm">
-            <Link className="text-primary hover:underline" href="/account/recover">
-              Forgot your password?
-            </Link>
-          </div>
-        </CardContent>
-      </Card>
+    <main className="flex min-h-[calc(100vh-var(--header-height))] items-center py-10">
+      <PageContainer width="md">
+        <Card className="surface-elevated w-full border-0">
+          <CardHeader>
+            <CardTitle>Sign in</CardTitle>
+            <CardDescription>
+              Use the same username and password as the game client.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <LoginForm />
+            <p className="mt-6 text-center text-sm">
+              <Link
+                className="text-muted-foreground transition hover:text-foreground"
+                href="/account/recover"
+              >
+                Forgot your password?
+              </Link>
+            </p>
+          </CardContent>
+        </Card>
+      </PageContainer>
     </main>
   );
 }

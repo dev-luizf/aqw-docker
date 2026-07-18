@@ -1,10 +1,8 @@
-import { getSessionCookie } from "better-auth/cookies";
 import { type NextRequest, NextResponse } from "next/server";
 
-export function proxy(request: NextRequest) {
-  if (!getSessionCookie(request, { cookiePrefix: "armagedom" })) {
-    return NextResponse.redirect(new URL("/account/login", request.url));
-  }
+// Account routes enforce auth in their server components. Keeping proxy
+// pass-through avoids redirect loops between cookie checks and session lookup.
+export function proxy(_request: NextRequest) {
   return NextResponse.next();
 }
 

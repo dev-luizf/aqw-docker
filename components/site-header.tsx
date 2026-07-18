@@ -1,32 +1,36 @@
-import { Shield, Swords } from "lucide-react";
+import { Swords } from "lucide-react";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
+import { getSiteName } from "@/lib/site";
 
 export function SiteHeader() {
+  const siteName = getSiteName();
+
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-background/85 backdrop-blur-xl">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-        <Link href="/" className="group flex items-center gap-3">
-          <span className="grid size-9 place-items-center rounded-lg border border-primary/30 bg-primary/10 text-primary transition group-hover:bg-primary/20">
-            <Swords className="size-5" />
+    <header className="shrink-0 border-b border-white/[0.06] bg-background/95 backdrop-blur-md">
+      <div className="mx-auto flex h-[var(--header-height)] max-w-6xl items-center justify-between px-4 sm:px-6">
+        <Link href="/" className="group flex min-w-0 items-center gap-2.5">
+          <span className="grid size-7 shrink-0 place-items-center rounded-md bg-primary/15 text-primary">
+            <Swords className="size-3.5" />
           </span>
-          <span className="font-display text-lg font-semibold tracking-wide">
-            {process.env.SITE_NAME ?? "Armagedom Worlds"}
+          <span className="truncate font-display text-sm font-semibold tracking-wide sm:text-base">
+            {siteName}
           </span>
         </Link>
-        <nav className="flex items-center gap-1" aria-label="Primary navigation">
-          <Button variant="ghost" asChild>
-            <Link href="/">News</Link>
-          </Button>
-          <Button variant="ghost" asChild>
+
+        <nav
+          className="flex shrink-0 items-center gap-5 sm:gap-6"
+          aria-label="Primary navigation"
+        >
+          <Link href="/" className="nav-link">
+            News
+          </Link>
+          <Link href="/account" className="nav-link">
+            Account
+          </Link>
+          <Button size="sm" asChild className="shadow-sm">
             <Link href="/play">Play</Link>
-          </Button>
-          <Button variant="outline" asChild>
-            <Link href="/account">
-              <Shield className="size-4" />
-              <span className="hidden sm:inline">Account</span>
-            </Link>
           </Button>
         </nav>
       </div>

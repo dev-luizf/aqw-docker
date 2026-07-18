@@ -23,6 +23,7 @@ declare global {
 }
 
 type GameClientProps = {
+  siteName: string;
   loader: string;
   publicGameIp: string;
   gamePort: number;
@@ -32,6 +33,7 @@ type GameClientProps = {
 };
 
 export function GameClient({
+  siteName,
   loader,
   publicGameIp,
   gamePort,
@@ -150,13 +152,11 @@ export function GameClient({
   return (
     <>
       <Script src="/ruffle/ruffle.js" strategy="afterInteractive" onLoad={initialize} />
-      <div className="overflow-x-auto pb-4">
-        <div
-          ref={holderRef}
-          className="mx-auto h-[550px] w-[960px] bg-black shadow-[0_0_45px_10px_rgb(0_0_0/75%)]"
-          aria-label="Armagedom Worlds game client"
-        />
-      </div>
+      <div
+        ref={holderRef}
+        className="game-client-frame"
+        aria-label={`${siteName} game client`}
+      />
       {error ? (
         <p className="mt-4 text-center text-sm text-destructive">{error}</p>
       ) : null}

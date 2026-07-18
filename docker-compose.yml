@@ -116,6 +116,9 @@ services:
       context: .
       dockerfile: docker/web/Dockerfile
       target: runner
+      args:
+        SITE_NAME: ${SITE_NAME:-Worlds}
+        SITE_DESCRIPTION: ${SITE_DESCRIPTION:-}
     restart: unless-stopped
     depends_on:
       migrate:

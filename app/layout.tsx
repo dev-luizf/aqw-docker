@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Cinzel, Geist } from "next/font/google";
 import { Toaster } from "sonner";
 
-import { SiteHeader } from "@/components/site-header";
+import { SiteShell } from "@/components/site-shell";
+import { getSiteDescription, getSiteName } from "@/lib/site";
 
 import "./globals.css";
 
@@ -16,14 +17,14 @@ const cinzel = Cinzel({
   subsets: ["latin"],
 });
 
+const siteName = getSiteName();
+
 export const metadata: Metadata = {
   title: {
-    default: process.env.SITE_NAME ?? "Armagedom Worlds",
-    template: `%s · ${process.env.SITE_NAME ?? "Armagedom Worlds"}`,
+    default: siteName,
+    template: `%s · ${siteName}`,
   },
-  description:
-    process.env.SITE_DESCRIPTION ??
-    "News, account tools, and the Armagedom Worlds game client.",
+  description: getSiteDescription(),
 };
 
 export default function RootLayout({
@@ -31,9 +32,8 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${geist.variable} ${cinzel.variable}`}>
-      <body className="antialiased">
-        <SiteHeader />
-        {children}
+      <body className="font-sans antialiased">
+        <SiteShell>{children}</SiteShell>
         <Toaster richColors position="top-right" />
       </body>
     </html>

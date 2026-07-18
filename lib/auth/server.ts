@@ -11,6 +11,9 @@ import {
 import { normalizeUsername, usernamePattern } from "@/lib/auth/username";
 import { db } from "@/lib/db";
 import * as schema from "@/lib/db/schema";
+import { getSiteName } from "@/lib/site";
+
+const siteName = getSiteName();
 
 const baseURL =
   process.env.BETTER_AUTH_URL ?? process.env.APP_URL ?? "http://127.0.0.1:8081";
@@ -24,7 +27,7 @@ export const internalAuthKey =
   configuredSecret ?? "development-only-secret-change-before-production";
 
 export const auth = betterAuth({
-  appName: process.env.SITE_NAME ?? "Armagedom Worlds",
+  appName: siteName,
   baseURL,
   secret: internalAuthKey,
   database: drizzleAdapter(db, {
@@ -85,7 +88,7 @@ export const auth = betterAuth({
       const url = `${baseURL}/account/reset-password?token=${encodeURIComponent(token)}`;
       await sendAuthEmail({
         to: user.email,
-        subject: "Reset your Armagedom password",
+        subject: `Reset your ${siteName} password`,
         text: "Use this single-use link within 30 minutes to choose a new password.",
         url,
       });
@@ -98,7 +101,7 @@ export const auth = betterAuth({
     sendVerificationEmail: async ({ user, url }) => {
       await sendAuthEmail({
         to: user.email,
-        subject: "Verify your Armagedom email",
+        subject: `Verify your ${siteName} email`,
         text: "Confirm this address to enable account recovery.",
         url,
       });
@@ -111,7 +114,7 @@ export const auth = betterAuth({
       sendChangeEmailConfirmation: async ({ user, newEmail, url }) => {
         await sendAuthEmail({
           to: user.emailVerified ? newEmail : user.email,
-          subject: "Confirm your new Armagedom email",
+          subject: `Confirm your new ${siteName} email`,
           text: `Confirm the change to ${newEmail}.`,
           url,
         });

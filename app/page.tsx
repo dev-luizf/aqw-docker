@@ -1,91 +1,63 @@
-import { ArrowRight, CalendarDays, Sparkles } from "lucide-react";
+import { ArrowRight, CalendarDays } from "lucide-react";
 import Link from "next/link";
 
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { HomeHero } from "@/components/home-hero";
+import { PageContainer } from "@/components/page-container";
 import { formatPostDate, getAllPosts } from "@/lib/posts";
 
 export default function HomePage() {
   const posts = getAllPosts();
 
   return (
-    <main>
-      <section className="border-b border-white/5">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
-          <div className="max-w-3xl">
-            <div className="mb-5 flex items-center gap-2 text-sm font-medium uppercase tracking-[0.22em] text-primary">
-              <Sparkles className="size-4" />
-              The world is waiting
-            </div>
-            <h1 className="font-display text-4xl font-semibold leading-tight sm:text-6xl">
-              News from Armagedom
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
-              Release notes, world updates, and dispatches from the team behind{" "}
-              {process.env.SITE_NAME ?? "Armagedom Worlds"}.
-            </p>
-            <Button size="lg" asChild className="mt-8">
-              <Link href="/play">
-                Play now
-                <ArrowRight />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+    <main className="pb-16">
+      <HomeHero />
 
-      <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+      <PageContainer id="news" className="scroll-mt-[var(--header-height)] py-10 sm:py-12">
         <div className="mb-8">
-          <p className="text-sm font-medium uppercase tracking-[0.18em] text-primary">
-            Chronicle
+          <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+            Latest news
+          </h2>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Patches, releases, and announcements.
           </p>
-          <h2 className="mt-2 font-display text-3xl font-semibold">Latest posts</h2>
         </div>
 
         {posts.length === 0 ? (
-          <Card className="border-dashed bg-card/40">
-            <CardContent className="py-12 text-center text-muted-foreground">
-              No dispatches have been published yet.
-            </CardContent>
-          </Card>
-        ) : (
-          <div className="grid gap-5 md:grid-cols-2">
-            {posts.map((post) => (
-              <Card
-                key={post.slug}
-                className="fantasy-panel group flex flex-col overflow-hidden transition hover:-translate-y-0.5 hover:border-primary/40"
-              >
-                <CardHeader>
-                  <div className="mb-3 flex items-center gap-2 text-xs uppercase tracking-wider text-muted-foreground">
-                    <CalendarDays className="size-3.5" />
-                    <time dateTime={post.date.toISOString()}>
-                      {formatPostDate(post.date)}
-                    </time>
-                  </div>
-                  <CardTitle className="text-2xl">{post.title}</CardTitle>
-                  <CardDescription className="pt-2 text-base leading-7">
-                    {post.summary}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="mt-auto">
-                  <Button variant="link" asChild className="h-auto p-0">
-                    <Link href={`/posts/${post.slug}`}>
-                      Read dispatch
-                      <ArrowRight className="transition group-hover:translate-x-1" />
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="surface rounded-xl px-6 py-14 text-center text-muted-foreground">
+            No posts published yet.
           </div>
+        ) : (
+          <ul className="divide-y divide-white/[0.06] rounded-xl border border-white/[0.06]">
+            {posts.map((post) => (
+              <li key={post.slug}>
+                <Link
+                  href={`/posts/${post.slug}`}
+                  className="group flex flex-col gap-3 px-5 py-5 transition hover:bg-white/[0.02] sm:flex-row sm:items-start sm:justify-between sm:gap-8 sm:px-6"
+                >
+                  <div className="min-w-0 flex-1">
+                    <div className="mb-2 flex items-center gap-2 text-xs text-muted-foreground">
+                      <CalendarDays className="size-3.5" />
+                      <time dateTime={post.date.toISOString()}>
+                        {formatPostDate(post.date)}
+                      </time>
+                    </div>
+                    <h3 className="text-lg font-semibold leading-snug group-hover:text-primary">
+                      {post.title}
+                    </h3>
+                    <p className="mt-1.5 line-clamp-2 text-sm leading-6 text-muted-foreground">
+                      {post.summary}
+                    </p>
+                  </div>
+                  <span className="inline-flex shrink-0 items-center gap-1 text-sm font-medium text-primary opacity-0 transition group-hover:opacity-100 sm:mt-6">
+                    Read
+                    <ArrowRight className="size-3.5" />
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
         )}
-      </section>
+      </PageContainer>
     </main>
   );
 }

@@ -12,6 +12,10 @@ RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
   pnpm install --frozen-lockfile
 
 FROM deps AS builder
+ARG SITE_NAME
+ARG SITE_DESCRIPTION
+ENV SITE_NAME=$SITE_NAME
+ENV SITE_DESCRIPTION=$SITE_DESCRIPTION
 COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
 RUN BETTER_AUTH_SECRET=build-only-secret-not-used-at-runtime-32 \

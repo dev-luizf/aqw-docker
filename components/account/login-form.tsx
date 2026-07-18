@@ -1,7 +1,6 @@
 "use client";
 
 import { LoaderCircle, LogIn } from "lucide-react";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -11,7 +10,6 @@ import { Label } from "@/components/ui/label";
 import { authClient } from "@/lib/auth/client";
 
 export function LoginForm() {
-  const router = useRouter();
   const [pending, setPending] = useState(false);
 
   return (
@@ -32,8 +30,7 @@ export function LoginForm() {
           toast.error("The username or password is incorrect.");
           return;
         }
-        router.push("/account");
-        router.refresh();
+        window.location.assign("/account");
       }}
     >
       <div className="space-y-2">

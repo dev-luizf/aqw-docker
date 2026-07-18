@@ -9,6 +9,7 @@ import {
   SignOutButton,
   VerificationActions,
 } from "@/components/account/account-actions";
+import { PageContainer } from "@/components/page-container";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -40,18 +41,21 @@ export default async function AccountPage() {
 
   if (!character) {
     return (
-      <main className="mx-auto max-w-3xl px-4 py-16">
-        <Card className="fantasy-panel">
-          <CardHeader>
-            <CardTitle>No character linked</CardTitle>
-            <CardDescription>
-              Create a hero through the game client to finish setting up this account.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <SignOutButton />
-          </CardContent>
-        </Card>
+      <main className="py-12">
+        <PageContainer width="md">
+          <Card className="surface-elevated border-0">
+            <CardHeader>
+              <CardTitle>No character linked</CardTitle>
+              <CardDescription>
+                Create a hero through the game client to finish setting up this
+                account.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <SignOutButton />
+            </CardContent>
+          </Card>
+        </PageContainer>
       </main>
     );
   }
@@ -72,77 +76,88 @@ export default async function AccountPage() {
   ];
 
   return (
-    <main className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-      <div className="mb-8 flex flex-wrap items-start justify-between gap-4">
-        <div>
-          <p className="text-sm uppercase tracking-[0.18em] text-primary">Character</p>
-          <h1 className="mt-2 font-display text-4xl font-semibold">{character.name}</h1>
-          <div className="mt-3 flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
-            <span>{session.user.email}</span>
-            <Badge
-              className={
-                session.user.emailVerified
-                  ? "border-emerald-700/50 bg-emerald-950/50 text-emerald-300"
-                  : "border-amber-700/50 bg-amber-950/50 text-amber-300"
-              }
-            >
-              {session.user.emailVerified ? "Verified" : "Unverified"}
-            </Badge>
+    <main className="py-10 sm:py-12">
+      <PageContainer>
+        <div className="mb-8 flex flex-wrap items-start justify-between gap-4">
+          <div>
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+              Account
+            </p>
+            <h1 className="mt-1 text-3xl font-semibold tracking-tight">
+              {character.name}
+            </h1>
+            <div className="mt-2 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+              <span>{session.user.email}</span>
+              <Badge
+                className={
+                  session.user.emailVerified
+                    ? "border-emerald-800/60 text-emerald-400"
+                    : "border-amber-800/60 text-amber-400"
+                }
+              >
+                {session.user.emailVerified ? "Verified" : "Unverified"}
+              </Badge>
+            </div>
+          </div>
+          <div className="flex gap-2">
+            <VerificationActions
+              email={session.user.email}
+              verified={session.user.emailVerified}
+            />
+            <SignOutButton />
           </div>
         </div>
-        <div className="flex gap-2">
-          <VerificationActions
-            email={session.user.email}
-            verified={session.user.emailVerified}
-          />
-          <SignOutButton />
-        </div>
-      </div>
 
-      <div className="grid gap-6 lg:grid-cols-[1.35fr_1fr]">
-        <Card className="fantasy-panel">
-          <CardHeader>
-            <CardTitle>Character overview</CardTitle>
-            <CardDescription>
-              Safe account and progression information from the game server.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="grid gap-px overflow-hidden rounded-lg border bg-border sm:grid-cols-2">
-            {stats.map(([label, value]) => (
-              <div key={label} className="flex justify-between gap-4 bg-card/95 p-4">
-                <span className="text-sm text-muted-foreground">{label}</span>
-                <span className="text-sm font-semibold">{value}</span>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-
-        <div className="space-y-6">
-          <Card id="email" className="fantasy-panel">
+        <div className="grid gap-5 lg:grid-cols-[1.4fr_1fr]">
+          <Card className="surface-elevated border-0">
             <CardHeader>
-              <CardTitle>Change email</CardTitle>
+              <CardTitle>Character</CardTitle>
               <CardDescription>
-                Your current password is required. Verified accounts confirm the
-                new address before it becomes active.
+                Progression and inventory limits from the game server.
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <ChangeEmailForm />
+              <dl className="grid gap-px overflow-hidden rounded-lg border border-white/[0.06] sm:grid-cols-2">
+                {stats.map(([label, value]) => (
+                  <div
+                    key={label}
+                    className="flex items-center justify-between gap-4 bg-background/40 px-4 py-3"
+                  >
+                    <dt className="text-sm text-muted-foreground">{label}</dt>
+                    <dd className="text-sm font-medium tabular-nums">{value}</dd>
+                  </div>
+                ))}
+              </dl>
             </CardContent>
           </Card>
-          <Card className="fantasy-panel">
-            <CardHeader>
-              <CardTitle>Change password</CardTitle>
-              <CardDescription>
-                Other browser sessions will be signed out.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <ChangePasswordForm />
-            </CardContent>
-          </Card>
+
+          <div className="space-y-5">
+            <Card id="email" className="surface-elevated border-0">
+              <CardHeader>
+                <CardTitle>Change email</CardTitle>
+                <CardDescription>
+                  Your current password is required. Verified accounts confirm
+                  the new address before it becomes active.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ChangeEmailForm />
+              </CardContent>
+            </Card>
+            <Card className="surface-elevated border-0">
+              <CardHeader>
+                <CardTitle>Change password</CardTitle>
+                <CardDescription>
+                  Other browser sessions will be signed out.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ChangePasswordForm />
+              </CardContent>
+            </Card>
+          </div>
         </div>
-      </div>
+      </PageContainer>
     </main>
   );
 }
