@@ -875,12 +875,11 @@ function createSummaryAndThumb(pID){
 <ul class='menus menu-secondary'>
 <li><a href='/'>HomePage</a></li>
 <li><a href='play.php'>Play Now</a></li>
-<li><a href='Account/Market.php'>Market</a></li>
 <li><a href='Team.php'>Staff</a></li>
 <li><a href='#'>Rankings</a>
 <ul class='children'>
 <li><a href='Ranking.php'>Ranking</a></li>
-<li><a href='TPvPRanking.php'>Total PvP Ranking</a></li>
+<li><a href='TPVPRanking.php'>Total PvP Ranking</a></li>
 <li><a href='PvPRanking.php'>Weekly PvP Ranking</a></li>
 </ul>
 </li>
@@ -1008,7 +1007,7 @@ while($l = mysql_fetch_assoc($selecionar)){
 
       <tr>
         <td bgcolor="#000000"><font color="#FFFFFF"><center><?php echo $i; ?></center><font></td>
-        <td bgcolor="#000000"><a href="Char.php?u=<?php echo $username; ?>"><center><?php echo $username; ?></center></a></td>
+        <td bgcolor="#000000"><a href="char.php?u=<?php echo $username; ?>"><center><?php echo $username; ?></center></a></td>
 		<td bgcolor="#000000"><font color="#FFFFFF"><center><?php echo $level; ?></center><font></td>
 		<td bgcolor="#000000"><font color="#FFFFFF"><center><?php echo $kill; ?></center><font></td>
 		<td bgcolor="#000000"><font color="#FFFFFF"><center><?php echo $death; ?></center><font></td>
@@ -1110,7 +1109,7 @@ while($profile = mysql_fetch_assoc($selecionar)){
 					<embed src="/gamefiles/AQW-POST.swf" style="padding: 0; margin: 0;" width="300" height="200" quality="high" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" flashvars="<?php echo $flashvars; ?>"></embed>
 				<script src="js/charpagedumper.js"></script>
 				</object>
-		<a href="Char.php?u=<?php echo $name; ?>"><center><h3>Player - <?php echo $name; ?></h3></center></a>
+		<a href="char.php?u=<?php echo $name; ?>"><center><h3>Player - <?php echo $name; ?></h3></center></a>
 		<center><h3>Player Guild - <?php echo $guildName; ?></h3></center></a>
 <?php } ?>
 <div class='clear'></div>

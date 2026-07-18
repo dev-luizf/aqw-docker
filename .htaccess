@@ -1,5 +1,10 @@
 RewriteEngine On
 
+# Compatibility redirects for links shipped with the legacy CMS. Linux paths are
+# case-sensitive, while the original site was authored with mixed-case names.
+RewriteRule ^Char\.php$ /char.php [R=301,L,NE]
+RewriteRule ^TPvPRanking\.php$ /TPVPRanking.php [R=301,L,NE]
+
 # Flash clients historically hit .asp endpoints — run them as PHP
 AddType application/x-httpd-php .asp .php
 

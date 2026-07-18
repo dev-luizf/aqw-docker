@@ -7,6 +7,12 @@ if (function_exists('mysql_connect')) {
     return;
 }
 
+// Constants formerly supplied by ext/mysql. Defining them keeps legacy default
+// arguments and result-mode comparisons quiet on PHP 7+.
+defined('MYSQL_ASSOC') || define('MYSQL_ASSOC', 1);
+defined('MYSQL_NUM') || define('MYSQL_NUM', 2);
+defined('MYSQL_BOTH') || define('MYSQL_BOTH', 3);
+
 $GLOBALS['__mysql_shim_link'] = null;
 
 function __mysql_shim_link($link = null)
@@ -65,15 +71,15 @@ function mysql_query($query, $link = null)
     return $link->query($query);
 }
 
-function mysql_fetch_array($result, $result_type = MYSQL_BOTH)
+function mysql_fetch_array($result, $result_type = 3)
 {
     if (!$result) {
         return false;
     }
     $type = MYSQLI_BOTH;
-    if ($result_type === MYSQL_ASSOC || $result_type === 1) {
+    if ($result_type === 1) {
         $type = MYSQLI_ASSOC;
-    } elseif ($result_type === MYSQL_NUM || $result_type === 2) {
+    } elseif ($result_type === 2) {
         $type = MYSQLI_NUM;
     }
     return $result->fetch_array($type);

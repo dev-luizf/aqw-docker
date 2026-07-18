@@ -867,12 +867,11 @@ function createSummaryAndThumb(pID){
 <ul class='menus menu-secondary'>
 <li><a href='/'>HomePage</a></li>
 <li><a href='play.php'>Play Now</a></li>
-<li><a href='Account/Market.php'>Market</a></li>
 <li><a href='Team.php'>Staff</a></li>
 <li><a href='#'>Rankings</a>
 <ul class='children'>
 <li><a href='Ranking.php'>Ranking</a></li>
-<li><a href='TPvPRanking.php'>Total PvP Ranking</a></li>
+<li><a href='TPVPRanking.php'>Total PvP Ranking</a></li>
 <li><a href='PvPRanking.php'>Weekly PvP Ranking</a></li>
 </ul>
 </li>
@@ -1006,10 +1005,11 @@ while($staff1 = mysql_fetch_assoc($selecionar)){
 			$petName = "";
 			$petFile = "none";
 			$petLink = "none";
-		}
-		$userGuildQuery = mysql_query("SELECT * FROM users_guilds WHERE UserID='".$staff1['id']."'");
-		$userGuildFetch = mysql_fetch_assoc($userGuildQuery);
-		$guildQuery = mysql_query("SELECT * FROM guilds WHERE id='".$userGuildFetch['GuildID']."'");
+			}
+			$userGuildQuery = mysql_query("SELECT * FROM users_guilds WHERE UserID='".$staff1['id']."'");
+			$userGuildFetch = mysql_fetch_assoc($userGuildQuery);
+			$guildID = $userGuildFetch ? (int) $userGuildFetch['GuildID'] : 0;
+			$guildQuery = mysql_query("SELECT * FROM guilds WHERE id='".$guildID."'");
 		$guildFetch = mysql_fetch_assoc($guildQuery);
 		if(mysql_num_rows($guildQuery) > 0){
 			$guildName = $guildFetch['Name'];
@@ -1094,7 +1094,7 @@ while($l = mysql_fetch_assoc($selecionar)){
 		$i++;
 ?>
 				<tr>
-        <td bgcolor="#000000"><a href="Char.php?u=<?php echo $username; ?>"><center><?php echo $username; ?></center></a></td>
+        <td bgcolor="#000000"><a href="char.php?u=<?php echo $username; ?>"><center><?php echo $username; ?></center></a></td>
 		<td bgcolor="#000000"><font color="#FFFFFF"><center><?php echo $kill; ?></center><font></td>
 		<td bgcolor="#000000"><font color="#FFFFFF"><center><?php echo $death; ?></center><font></td>
         </tr>
@@ -1160,7 +1160,7 @@ while($s = mysql_fetch_assoc($sorteado)){
 		}
 ?>
 				<tr>
-		<td bgcolor="#000000"><font color="#FFFFFF"><a href="Char.php?u=<?php echo $username; ?>"><center><?php echo $username; ?></center><font></td>
+		<td bgcolor="#000000"><font color="#FFFFFF"><a href="char.php?u=<?php echo $username; ?>"><center><?php echo $username; ?></center><font></td>
 		<td bgcolor="#000000"><font color="#FFFFFF"><center><?php echo $ganhou; ?></center><font></td>
         </tr>
 		<?php } ?>

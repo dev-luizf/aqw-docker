@@ -875,12 +875,11 @@ function createSummaryAndThumb(pID){
 <ul class='menus menu-secondary'>
 <li><a href='/'>HomePage</a></li>
 <li><a href='play.php'>Play Now</a></li>
-<li><a href='Account/Market.php'>Market</a></li>
 <li><a href='Team.php'>Staff</a></li>
 <li><a href='#'>Rankings</a>
 <ul class='children'>
 <li><a href='Ranking.php'>Ranking</a></li>
-<li><a href='TPvPRanking.php'>Total PvP Ranking</a></li>
+<li><a href='TPVPRanking.php'>Total PvP Ranking</a></li>
 <li><a href='PvPRanking.php'>Weekly PvP Ranking</a></li>
 </ul>
 </li>
@@ -2144,16 +2143,16 @@ while($staff9 = mysql_fetch_assoc($selecionar9)){
 <div style='clear:both;'></div>
 <div class='sidebarpbt section' id='sidebarright'>
 <h2><center>Staff Status</center></h2>
-	    <font color="white"><center><a href="Char.php?u=Yusk8"><h3>Yusk8</a> - </font><?php echo $server; ?></h3></center>
-		<font color="white"><center><a href="Char.php?u=Mega Gamer"><h3>Mega Gamer</a> - </font><?php echo $server1; ?></h3></center>
-		<font color="white"><center><a href="Char.php?u=eugenio123344"><h3>Eugenio123344</a> - </font><?php echo $server2; ?></h3></center>
-		<font color="white"><center><a href="Char.php?u=ZmegatronZ"><h3>ZmegatronZ</a> - </font><?php echo $server3; ?></h3></center>
-		<font color="white"><center><a href="Char.php?u=Ren"><h3>Ren</a> - </font><?php echo $server4; ?></h3></center>
-		<font color="white"><center><a href="Char.php?u=Gust4v0o"><h3>Gust4v0o</a> - </font><?php echo $server5; ?></h3></center>
-		<font color="white"><center><a href="Char.php?u=pikachudeath"><h3>Pikachudeath</a> - </font><?php echo $server6; ?></h3></center>
-		<font color="white"><center><a href="Char.php?u=Breek"><h3>Breek</a> - </font><?php echo $server7; ?></h3></center>
-		<font color="white"><center><a href="Char.php?u=Lukas2"><h3>Lukas2</a> - </font><?php echo $server8; ?></h3></center>
-		<font color="white"><center><a href="Char.php?u=lB1"><h3>lB1</a> - </font><?php echo $server9; ?></h3></center>
+	    <font color="white"><center><a href="char.php?u=Yusk8"><h3>Yusk8</a> - </font><?php echo $server; ?></h3></center>
+		<font color="white"><center><a href="char.php?u=Mega Gamer"><h3>Mega Gamer</a> - </font><?php echo $server1; ?></h3></center>
+		<font color="white"><center><a href="char.php?u=eugenio123344"><h3>Eugenio123344</a> - </font><?php echo $server2; ?></h3></center>
+		<font color="white"><center><a href="char.php?u=ZmegatronZ"><h3>ZmegatronZ</a> - </font><?php echo $server3; ?></h3></center>
+		<font color="white"><center><a href="char.php?u=Ren"><h3>Ren</a> - </font><?php echo $server4; ?></h3></center>
+		<font color="white"><center><a href="char.php?u=Gust4v0o"><h3>Gust4v0o</a> - </font><?php echo $server5; ?></h3></center>
+		<font color="white"><center><a href="char.php?u=pikachudeath"><h3>Pikachudeath</a> - </font><?php echo $server6; ?></h3></center>
+		<font color="white"><center><a href="char.php?u=Breek"><h3>Breek</a> - </font><?php echo $server7; ?></h3></center>
+		<font color="white"><center><a href="char.php?u=Lukas2"><h3>Lukas2</a> - </font><?php echo $server8; ?></h3></center>
+		<font color="white"><center><a href="char.php?u=lB1"><h3>lB1</a> - </font><?php echo $server9; ?></h3></center>
 <h2><center>Recruitment</center></h2>
 <font color="white"><h3><center>If you want to join our team simply fill out the form below with the requested data if you are selected we will send an email reply</center></h3><font>
 <form action="" method="post">

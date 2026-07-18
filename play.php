@@ -82,10 +82,18 @@ $configJson = json_encode([
         display: flex;
         align-items: center;
         justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px 20px;
         padding: 12px 20px;
         border-bottom: 1px solid rgba(232, 220, 200, 0.15);
       }
-      header a { color: #e8dcc8; text-decoration: none; margin-left: 16px; opacity: 0.85; }
+      header nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 8px 16px;
+      }
+      header a { color: #e8dcc8; text-decoration: none; opacity: 0.85; white-space: nowrap; }
       header a:hover { opacity: 1; }
       .brand { font-size: 1.25rem; letter-spacing: 0.04em; font-weight: bold; }
       main {
@@ -204,9 +212,17 @@ $configJson = json_encode([
     <header>
       <div class="brand"><?php echo htmlspecialchars(Configuration::getPublic('Name') ?: 'Armagedom', ENT_QUOTES, 'UTF-8'); ?></div>
       <nav>
-        <a href="/Register.php">Register</a>
-        <a href="/play.php">Play</a>
         <a href="/">Home</a>
+        <a href="/play.php">Play</a>
+        <a href="/Register.php">Register</a>
+        <a href="/Ranking.php">Players</a>
+        <a href="/GuildRanking.php">Guilds</a>
+        <a href="/PvPRanking.php">Weekly PvP</a>
+        <a href="/TPVPRanking.php">Total PvP</a>
+        <a href="/Maps.php">Maps</a>
+        <a href="/Rules.php">Rules</a>
+        <a href="/Team.php">Staff</a>
+        <a href="/Account/Manage.php">Account</a>
       </nav>
     </header>
     <main>

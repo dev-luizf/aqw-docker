@@ -1093,12 +1093,11 @@ function createSummaryAndThumb(pID){
 <ul class='menus menu-secondary'>
 <li><a href='/'>HomePage</a></li>
 <li><a href='play.php'>Play Now</a></li>
-<li><a href='Account/Market.php'>Market</a></li>
 <li><a href='Team.php'>Staff</a></li>
 <li><a href='#'>Rankings</a>
 <ul class='children'>
 <li><a href='Ranking.php'>Ranking</a></li>
-<li><a href='TPvPRanking.php'>Total PvP Ranking</a></li>
+<li><a href='TPVPRanking.php'>Total PvP Ranking</a></li>
 <li><a href='PvPRanking.php'>Weekly PvP Ranking</a></li>
 </ul>
 </li>
