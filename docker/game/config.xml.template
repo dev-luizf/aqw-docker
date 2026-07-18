@@ -19,16 +19,11 @@
 	  <UserVarsOptimization>true</UserVarsOptimization>
 	  <DeadChannelsPolicy>strict</DeadChannelsPolicy>
 	  
-	  <LogMaxSize>5000000</LogMaxSize>
-	  <LogMaxFiles>5</LogMaxFiles>
-	  
       <!-- Server Variables limits (-1 = unlimited) -->
       <MaxRoomVars>-1</MaxRoomVars>
       <MaxUserVars>-1</MaxUserVars>
      
       <!-- New since 1.6.3, optimizes user variables size -->
-      <UserVarsOptimization>true</UserVarsOptimization>
-     
       <AntiFlood active="false">
          <MinMsgTime tolerance="5">1000</MinMsgTime>
          <MaxRepeatedMessages>3</MaxRepeatedMessages>
@@ -84,7 +79,6 @@
       </ClientMessagQueue>
      
       <MaxIncomingQueue>5000</MaxIncomingQueue>
-      <DeadChannelsPolicy>strict</DeadChannelsPolicy>
       <MaxMsgLen>4096</MaxMsgLen>
      
       <LogMaxSize>5000000</LogMaxSize>
@@ -111,35 +105,25 @@
      
       <!-- Allowed administrator IP addresses -->
       <AdminAllowedAddresses>
-         <AllowedAddress>*.*.*.*</AllowedAddress>
+         <AllowedAddress>${SFS_ADMIN_ALLOWED_ADDRESS}</AllowedAddress>
       </AdminAllowedAddresses>
      
       <!-- Allow remote debugging of extensions -->
-      <ExtensionRemoteDebug>true</ExtensionRemoteDebug>
+      <ExtensionRemoteDebug>false</ExtensionRemoteDebug>
      
       <!--
         Allow global autoreload of extensions upon file save
         You should specify in each Zone if the autoreload is enabled.
      -->
-      <AutoReloadExtensions>true</AutoReloadExtensions>
-     
-      <ExtensionRemoteDebug>true</ExtensionRemoteDebug>
+      <AutoReloadExtensions>false</AutoReloadExtensions>
      
       <IpFilter>0</IpFilter>
-     
-      <Mailer>
-         <MailHost>test.mail.com</MailHost>
-         <MailUser>foo</MailUser>
-         <MailPass>bar</MailPass>
-         <SmtpPort>25</SmtpPort>
-         <WorkerThreads>1</WorkerThreads>
-      </Mailer>
      
       <!-- Enable / Disable remote zone info -->
       <EnableZoneInfo>false</EnableZoneInfo>
      
       <!-- Enable / Disable embedded webserver -->
-      <WebServer active="true">
+      <WebServer active="false">
          <CfgFile>webserver/cfg/jetty.xml</CfgFile>
       </WebServer>
      

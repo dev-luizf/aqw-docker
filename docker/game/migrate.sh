@@ -26,8 +26,17 @@ fi
 
 export MYSQL_PWD="$MYSQL_PASSWORD"
 
+if command -v mariadb >/dev/null 2>&1; then
+  MYSQL_CLI=mariadb
+elif command -v mysql >/dev/null 2>&1; then
+  MYSQL_CLI=mysql
+else
+  echo "MariaDB/MySQL client not found" >&2
+  exit 1
+fi
+
 database() {
-  mysql \
+  "$MYSQL_CLI" \
     --protocol=TCP \
     --host="$MYSQL_HOST" \
     --port="$MYSQL_PORT" \

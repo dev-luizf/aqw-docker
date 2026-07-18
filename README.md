@@ -13,9 +13,10 @@ cp .env.example .env
 docker compose up --build
 ```
 
-Open <http://127.0.0.1:8081>. The game container applies the reviewed Drizzle
-migrations before starting SmartFox, and the portal waits for the healthy game
-server.
+Open <http://127.0.0.1:8081>. A one-shot migration container applies the
+reviewed Drizzle migrations before the portal and SmartFox start.
+When upgrading an existing installation, back up the database volume first;
+the MariaDB 11.4 container automatically runs the system-table upgrade.
 
 The first migration intentionally clears player-created data and preserves the
 static game definitions loaded by `docker/db/01-mextv3.sql`. Never run
@@ -78,6 +79,7 @@ The game image applies:
 
 - `tools/patch_augoeides_login.sh` for Spider nick parsing.
 - `tools/patch_augoeides_ticket_login.sh` for atomic, single-use game tickets.
+- `tools/patch_augoeides_console.sh` for clean headless container startup.
 - `tools/patch_rooms_monster_definitions.sh` for existing compatibility.
 
 The legacy PHP portal and Apache runtime have been removed. Only active Flash

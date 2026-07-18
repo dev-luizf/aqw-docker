@@ -1,12 +1,14 @@
 package main
 
 import (
+	"flag"
 	"io"
 	"log"
 	"net"
 	"net/http"
 	"os"
 	"strings"
+	"time"
 
 	"golang.org/x/net/websocket"
 )
@@ -59,7 +61,7 @@ func flashSocketProxy(gameAddr string) http.Handler {
 							if i < 0 {
 								break
 							}
-							msg := pending[: i+1]
+							msg := pending[:i+1]
 							pending = pending[i+1:]
 							if len(msg) == 1 {
 								continue
@@ -92,7 +94,7 @@ func flashSocketProxy(gameAddr string) http.Handler {
 							if i < 0 {
 								break
 							}
-							msg := pending[: i+1]
+							msg := pending[:i+1]
 							pending = pending[i+1:]
 							if len(msg) == 1 {
 								continue
@@ -119,10 +121,30 @@ func flashSocketProxy(gameAddr string) http.Handler {
 }
 
 func main() {
+	healthcheck := flag.Bool("healthcheck", false, "check the local proxy health endpoint")
+	flag.Parse()
+
 	host := getenv("GAME_HOST", "game")
 	port := strings.TrimPrefix(getenv("GAME_PORT", "5588"), ":")
 	listen := getenv("PROXY_LISTEN", ":9001")
 	gameAddr := host + ":" + port
+
+	if *healthcheck {
+		_, healthPort, err := net.SplitHostPort(listen)
+		if err != nil {
+			log.Fatalf("invalid PROXY_LISTEN %q: %v", listen, err)
+		}
+		client := http.Client{Timeout: 2 * time.Second}
+		resp, err := client.Get("http://127.0.0.1:" + healthPort + "/healthz")
+		if err != nil {
+			log.Fatal(err)
+		}
+		defer resp.Body.Close()
+		if resp.StatusCode != http.StatusOK {
+			log.Fatalf("healthcheck returned %s", resp.Status)
+		}
+		return
+	}
 
 	mux := http.NewServeMux()
 	mux.Handle("/flash-socket-proxy", flashSocketProxy(gameAddr))

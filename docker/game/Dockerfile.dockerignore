@@ -1,0 +1,13 @@
+**
+!docker/
+!docker/game/
+!docker/game/**
+!docker/sync-game-config.sh
+!emulator/
+!emulator/Server/
+!emulator/Server/**
+!tools/
+!tools/patch_augoeides_console.sh
+!tools/patch_augoeides_login.sh
+!tools/patch_augoeides_ticket_login.sh
+!tools/patch_rooms_monster_definitions.sh

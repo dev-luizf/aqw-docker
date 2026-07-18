@@ -1,0 +1,10 @@
+**
+!docker/
+!docker/game/
+!docker/game/migrate.sh
+!docker/migrate/
+!docker/migrate/Dockerfile
+!lib/
+!lib/db/
+!lib/db/migrations/
+!lib/db/migrations/**

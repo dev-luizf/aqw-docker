@@ -32,7 +32,7 @@ x-database-config: &database-config
   MYSQL_PORT: ${MYSQL_PORT:-3306}
   MYSQL_DATABASE: ${MYSQL_DATABASE:-mextv3}
   MYSQL_USER: ${MYSQL_USER:-aqw}
-  MYSQL_PASSWORD: ${MYSQL_PASSWORD:-aqw}
+  MYSQL_PASSWORD: ${MYSQL_PASSWORD:?Set MYSQL_PASSWORD in .env}
 
 x-portal-config: &portal-config
   <<: [*game-config, *database-config]
@@ -52,13 +52,14 @@ x-portal-config: &portal-config
 
 services:
   db:
-    image: mariadb:10.5
+    image: mariadb:11.4
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-armagedom}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Set MYSQL_ROOT_PASSWORD in .env}
       MYSQL_DATABASE: ${MYSQL_DATABASE:-mextv3}
       MYSQL_USER: ${MYSQL_USER:-aqw}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-aqw}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:?Set MYSQL_PASSWORD in .env}
+      MARIADB_AUTO_UPGRADE: "1"
     volumes:
       - armagedom-db:/var/lib/mysql
       - ./docker/db/01-mextv3.sql:/docker-entrypoint-initdb.d/01-mextv3.sql:ro
@@ -75,18 +76,32 @@ services:
       retries: 30
       start_period: 20s
 
+  migrate:
+    build:
+      context: .
+      dockerfile: docker/migrate/Dockerfile
+    restart: "no"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      <<: *database-config
+
   game:
     build:
       context: .
       dockerfile: docker/game/Dockerfile
     restart: unless-stopped
     depends_on:
-      db:
-        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
     environment:
       <<: [*game-config, *database-config]
       SFS_ADMIN_USER: ${SFS_ADMIN_USER:-dolphin}
-      SFS_ADMIN_PASSWORD: ${SFS_ADMIN_PASSWORD:-test123}
+      SFS_ADMIN_PASSWORD: ${SFS_ADMIN_PASSWORD:?Set SFS_ADMIN_PASSWORD in .env}
+      SFS_ADMIN_ALLOWED_ADDRESS: ${SFS_ADMIN_ALLOWED_ADDRESS:-127.0.0.1}
+      JAVA_XMS: ${JAVA_XMS:-128m}
+      JAVA_XMX: ${JAVA_XMX:-768m}
     expose:
       - "${GAME_PORT:-5588}"
     healthcheck:
@@ -103,8 +118,8 @@ services:
       target: runner
     restart: unless-stopped
     depends_on:
-      game:
-        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
     environment:
       <<: *portal-config
     ports:
@@ -135,6 +150,12 @@ services:
       PROXY_LISTEN: ${PROXY_LISTEN:-:9001}
     ports:
       - "127.0.0.1:${PROXY_PORT_HOST:-9001}:9001"
+    healthcheck:
+      test: ["CMD", "/usr/local/bin/ruffle-proxy", "-healthcheck"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
 
 volumes:
   armagedom-db:

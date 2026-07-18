@@ -3,6 +3,8 @@ set -eu
 
 # The legacy emulator reads these tables directly. Keep them as a projection
 # of the environment; they are no longer configuration sources.
+export MYSQL_PWD="$MYSQL_PASSWORD"
+
 to_hex() {
   printf '%s' "$1" | od -An -tx1 | tr -d ' \n'
 }
@@ -23,12 +25,12 @@ require_uint() {
 sync_setting() {
   name="$1"
   value="$2"
-  mysql -h"$MYSQL_HOST" -P"$MYSQL_PORT" -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" "$MYSQL_DATABASE" \
+  mysql -h"$MYSQL_HOST" -P"$MYSQL_PORT" -u"$MYSQL_USER" "$MYSQL_DATABASE" \
     --execute="INSERT INTO settings_login (name, value) VALUES ($(sql_text "$name"), $(sql_text "$value")) ON DUPLICATE KEY UPDATE value=VALUES(value)"
 }
 
 # Existing volumes may still use the narrow fields from the original dump.
-mysql -h"$MYSQL_HOST" -P"$MYSQL_PORT" -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" "$MYSQL_DATABASE" --execute="
+mysql -h"$MYSQL_HOST" -P"$MYSQL_PORT" -u"$MYSQL_USER" "$MYSQL_DATABASE" --execute="
 ALTER TABLE settings_login MODIFY value varchar(255) NOT NULL DEFAULT '';
 ALTER TABLE servers MODIFY IP varchar(255) NOT NULL DEFAULT '0.0.0.0';
 "
@@ -71,7 +73,7 @@ require_uint GAME_SERVER_MAX_PLAYERS "$server_max"
 require_uint GAME_SERVER_CHAT_MODE "$server_chat"
 require_uint GAME_SERVER_UPGRADE_ONLY "$server_upgrade"
 
-mysql -h"$MYSQL_HOST" -P"$MYSQL_PORT" -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" "$MYSQL_DATABASE" --execute="
+mysql -h"$MYSQL_HOST" -P"$MYSQL_PORT" -u"$MYSQL_USER" "$MYSQL_DATABASE" --execute="
 UPDATE servers SET
   Name=$(sql_text "$server_name"),
   IP=$(sql_text "$server_ip"),
