@@ -198,7 +198,7 @@ class Handler extends ContentMS {
                 case 'Enhancement': 
                 case 'Note': 
                 case 'Item': 
-                    continue;
+                    continue 2;
                 case 'Armor':
                     array_push($Armors, $ItemObj);
                     break;

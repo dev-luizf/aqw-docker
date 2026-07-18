@@ -1,0 +1,107 @@
+services:
+  db:
+    image: mariadb:10.5
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-armagedom}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-mextv3}
+      MYSQL_USER: ${MYSQL_USER:-aqw}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-aqw}
+    volumes:
+      - armagedom-db:/var/lib/mysql
+      - ./DB/mextv3.sql:/docker-entrypoint-initdb.d/01-mextv3.sql:ro
+      - ./docker/db/02-bootstrap.sql:/docker-entrypoint-initdb.d/02-bootstrap.sql:ro
+      - ./docker/db/03-battleon-map.sql:/docker-entrypoint-initdb.d/03-battleon-map.sql:ro
+      - ./docker/db/patch_settings_game44.sql:/docker-entrypoint-initdb.d/patch_settings_game44.sql:ro
+    command:
+      - --character-set-server=latin1
+      - --collation-server=latin1_swedish_ci
+      - --sql-mode=
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 20s
+
+  game:
+    build:
+      context: .
+      dockerfile: docker/game/Dockerfile
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      MYSQL_HOST: db
+      MYSQL_PORT: ${MYSQL_PORT:-3306}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-mextv3}
+      MYSQL_USER: ${MYSQL_USER:-aqw}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-aqw}
+      GAME_PORT: ${GAME_PORT:-5588}
+      SERVER_NAME: ${SERVER_NAME:-Armagedom}
+      SFS_ADMIN_USER: ${SFS_ADMIN_USER:-dolphin}
+      SFS_ADMIN_PASSWORD: ${SFS_ADMIN_PASSWORD:-test123}
+    # Raw TCP for native Flash players (optional). Browser clients use nginx /flash-socket-proxy.
+    # ports:
+    #   - "${GAME_PORT_HOST:-5588}:5588"
+    expose:
+      - "${GAME_PORT:-5588}"
+
+  web:
+    build:
+      context: .
+      dockerfile: docker/web/Dockerfile
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      MYSQL_HOST: db
+      MYSQL_PORT: ${MYSQL_PORT:-3306}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-mextv3}
+      MYSQL_USER: ${MYSQL_USER:-aqw}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-aqw}
+      SITE_NAME: ${SITE_NAME:-Armagedom Worlds}
+      SITE_COMPANY: ${SITE_COMPANY:-Armagedom Team}
+      SITE_DESCRIPTION: ${SITE_DESCRIPTION:-AQW private server}
+      SERVER_NAME: ${SERVER_NAME:-Armagedom}
+      PUBLIC_GAME_IP: ${PUBLIC_GAME_IP:-127.0.0.1}
+      GAME_PORT: ${GAME_PORT:-5588}
+      GAME_LOADER: ${GAME_LOADER:-/gamefiles/loaders/loader.swf}
+      GAME_CLIENT_SWF: ${GAME_CLIENT_SWF:-Game_20150324.swf}
+      GAME_CLIENT_BG: ${GAME_CLIENT_BG:-client/prep.swf}
+      GAME_VERSION_STATUS: ${GAME_VERSION_STATUS:-success}
+      TIMEZONE: ${TIMEZONE:-UTC}
+    expose:
+      - "80"
+    volumes:
+      # Live-edit PHP/CMS without rebuilding the image
+      - ./:/var/www/html
+
+  proxy:
+    build:
+      context: ./docker/proxy
+    restart: unless-stopped
+    depends_on:
+      - game
+    environment:
+      GAME_HOST: ${AQW_GAME_HOST:-game}
+      GAME_PORT: ${GAME_PORT:-5588}
+      PROXY_LISTEN: ${PROXY_LISTEN:-:9001}
+    expose:
+      - "9001"
+
+  nginx:
+    image: nginx:1.27-alpine
+    restart: unless-stopped
+    depends_on:
+      - web
+      - proxy
+    ports:
+      - "${WEB_PORT_HOST:-8080}:80"
+    volumes:
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+
+volumes:
+  armagedom-db:

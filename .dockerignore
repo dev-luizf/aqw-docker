@@ -1,0 +1,12 @@
+.git
+.gitignore
+**/*.rar
+**/*.zip
+**/*.7z
+emulator/jre
+emulator/Uninstall.exe
+emulator/Server/logs/*
+emulator/Server/datastore/*
+**/node_modules
+.env
+*.md

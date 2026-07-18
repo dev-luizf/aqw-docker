@@ -1,7 +1,6 @@
-<Files getversion.asp>
-  Header Set Pragma "no-cache"
-  Header Set Expires "Thu, 1 Jan 1970 00:00:00 GMT"
-  Header Set Cache-Control "max-age=0, no-store, no-cache, must-revalidate"
-  Header Unset ETag
-  FileETag None
-</Files>
+RewriteEngine On
+# Missing hair variants fall back to Default.swf (casefix also covers
+# lowercase hair/m|f paths when the exact file is absent).
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule ^.*\.swf$ Default.swf [L]

@@ -1,0 +1,106 @@
+# Server Settings
+server.staffonly=false
+server.name=${SERVER_NAME}
+
+# Database Settings
+database.host=${MYSQL_HOST}
+database.user=${MYSQL_USER}
+database.pass=${MYSQL_PASSWORD}
+database.port=${MYSQL_PORT}
+database.name=${MYSQL_DATABASE}
+database.connections.max=500
+
+# Anti Message Flood
+antiflood.message.tolerance=3
+antiflood.message.warnings=3
+antiflood.message.minimumtime=1000
+antiflood.message.maxrepeated=3
+antiflood.message.maxsimilar=4
+antiflood.request.ipbanlist=bannedip.txt
+
+# Anti Request Flood
+antiflood.request.warnings=5
+antiflood.request.tolerance=10
+antiflood.request.minimumtime=500
+
+# Anti Request Repeat Filter
+antiflood.request.enablerepeatfilter=false
+antiflood.request.maxrepeated=10
+
+# Anti Request Exceptions
+antiflood.request.guarded.1=message
+antiflood.request.guarded.2=gar
+
+# Requests
+handler.requests.1=firstJoin=augoeides.requests.FirstJoin
+handler.requests.2=cmd=augoeides.requests.UserCommand
+handler.requests.3=moveToCell=augoeides.requests.MoveToCell
+handler.requests.4=retrieveUserDatas=augoeides.requests.RetrieveUserDatas
+handler.requests.5=retrieveUserData=augoeides.requests.RetrieveUserData
+handler.requests.6=retrieveInventory=augoeides.requests.RetrieveInventory
+handler.requests.7=message=augoeides.requests.Message
+handler.requests.8=mv=augoeides.requests.Move
+handler.requests.9=loadShop=augoeides.requests.LoadShop
+handler.requests.10=buyItem=augoeides.requests.BuyItem
+handler.requests.11=equipItem=augoeides.requests.EquipItem
+handler.requests.12=unequipItem=augoeides.requests.UnequipItem
+handler.requests.13=afk=augoeides.requests.Afk
+handler.requests.14=sellItem=augoeides.requests.SellItem
+handler.requests.15=removeItem=augoeides.requests.RemoveItem
+handler.requests.16=aggroMon=augoeides.requests.AggroMonster
+handler.requests.17=gar=augoeides.requests.Action
+handler.requests.18=resPlayerTimed=augoeides.requests.RestoreTimed
+handler.requests.19=restRequest=augoeides.requests.Rest
+handler.requests.20=reloadShop=augoeides.requests.LoadShop
+handler.requests.21=loadBank=augoeides.requests.LoadBank
+handler.requests.22=bankToInv=augoeides.requests.BankToInventory
+handler.requests.23=bankFromInv=augoeides.requests.BankFromInventory
+handler.requests.24=bankSwapInv=augoeides.requests.BankSwapInventory
+handler.requests.25=cc=augoeides.requests.CannedChat
+handler.requests.26=ia=augoeides.requests.Interaction
+handler.requests.27=isModerator=augoeides.requests.IsModerator
+handler.requests.28=emotea=augoeides.requests.EmoteAction
+handler.requests.29=em=augoeides.requests.EmoteMessage
+handler.requests.30=gp=augoeides.requests.PartyCommand
+handler.requests.31=changeColor=augoeides.requests.ChangeColor
+handler.requests.32=changeArmorColor=augoeides.requests.ChangeArmorColor
+handler.requests.33=loadHairShop=augoeides.requests.LoadHairshop
+handler.requests.34=getQuests=augoeides.requests.GetQuests
+handler.requests.35=acceptQuest=augoeides.requests.AcceptQuest
+handler.requests.36=tryQuestComplete=augoeides.requests.TryQuestComplete
+handler.requests.37=getDrop=augoeides.requests.GetDrop
+handler.requests.38=guild=augoeides.requests.GuildCommand
+handler.requests.39=whisper=augoeides.requests.Whisper
+handler.requests.40=requestFriend=augoeides.requests.RequestFriend
+handler.requests.41=addFriend=augoeides.requests.AddFriend
+handler.requests.42=getfriendlist=augoeides.requests.GetFriendList
+handler.requests.43=deleteFriend=augoeides.requests.DeleteFriend
+handler.requests.44=buyBagSlots=augoeides.requests.BuyBagSlots
+handler.requests.45=buyBankSlots=augoeides.requests.BuyBankSlots
+handler.requests.46=buyHouseSlots=augoeides.requests.BuyHouseSlots
+handler.requests.47=house=augoeides.requests.HouseJoin
+handler.requests.48=housesave=augoeides.requests.HouseSave
+handler.requests.49=declineFriend=augoeides.requests.DeclineFriend
+handler.requests.50=geia=augoeides.requests.GetPotionEffect
+handler.requests.51=trap door=augoeides.requests.TrapDoor
+handler.requests.52=Dragon Buff=augoeides.requests.DragonBuff
+handler.requests.53=da=augoeides.requests.DuelAccept
+handler.requests.54=dd=augoeides.requests.DuelDecline
+handler.requests.55=duel=augoeides.requests.DuelInvite
+handler.requests.56=PVPQr=augoeides.requests.PvpQueueRequest
+handler.requests.57=PVPIr=augoeides.requests.PvpInviteReply
+handler.requests.58=mtcid=augoeides.requests.MoveToCellById
+handler.requests.59=enhanceItemLocal=augoeides.requests.EnhanceItemLocal
+handler.requests.60=enhanceItemShop=augoeides.requests.EnhanceItemShop
+handler.requests.61=genderSwap=augoeides.requests.GenderSwap
+handler.requests.62=serverUseItem=augoeides.requests.ServerUseItem
+handler.requests.63=getMapItem=augoeides.requests.GetMapItem
+handler.requests.64=retrievelnventory=augoeides.requests.RetrieveInventory
+handler.requests.65=redeemCode=augoeides.requests.customfunctions.RedeemCode
+handler.requests.66=gw=augoeides.requests.WarInvite
+handler.requests.67=gda=augoeides.requests.WarAccept
+handler.requests.68=gdd=augoeides.requests.WarDecline
+handler.requests.69=setAchievement=augoeides.requests.SetAchievement
+handler.requests.70=loadWarVars=augoeides.requests.LoadWarVars
+handler.requests.71=Rebirth=augoeides.requests.customfunctions.Rebirth
+handler.requests.72=book=augoeides.requests.Book

@@ -1,14 +1,14 @@
 <?php
-	#NÃO ALTERE O ARQUIVO SE NÃO SOUBER O QUE ESTÁ FAZENDO!
+	#Nï¿½O ALTERE O ARQUIVO SE Nï¿½O SOUBER O QUE ESTï¿½ FAZENDO!
 	error_reporting(0);
 	session_start();
 	
-	include "geral.php";
+	include dirname(__FILE__) . '/../../../geral.php';
 	
 	$con = mysql_connect(DB_HOST, DB_USER, DB_PASS);
 	$db = mysql_select_db(DB_DATA);
 	
-	#CONFIGURAÇÕES DA SESSION
+	#CONFIGURAï¿½ï¿½ES DA SESSION
 	$useron = $_SESSION['userlog'];
 	$passon = $_SESSION['passlog'];
 	

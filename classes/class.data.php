@@ -95,7 +95,10 @@ class DataHandler {
                     break;
                 case null:
                 default:
-                    $this->OUTPUT =  $this->OUTPUT == null ? $Key . '=' . $Value : $this->OUTPUT . '&' . $Key . '=' . $Value;
+                    // Flash URLVariables.decode() requires application/x-www-form-urlencoded.
+                    // Unencoded spaces (e.g. sTitle=Bug Fixes!) throw URIError and stall the loader.
+                    $encValue = rawurlencode((string) $Value);
+                    $this->OUTPUT = $this->OUTPUT == null ? $Key . '=' . $encValue : $this->OUTPUT . '&' . $Key . '=' . $encValue;
                     break;
             }
         }

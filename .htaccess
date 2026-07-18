@@ -1,0 +1,40 @@
+RewriteEngine On
+
+# Flash clients historically hit .asp endpoints — run them as PHP
+AddType application/x-httpd-php .asp .php
+
+# Loader always requests gameversion.asp; serve the URL-encoded responder.
+RewriteRule ^getversion\.asp$ gameversion2.php [L,QSA]
+RewriteRule ^gameversion\.asp$ gameversion2.php [L,QSA]
+RewriteRule ^gameversion2\.asp$ gameversion2.php [L,QSA]
+RewriteRule ^cf-userlogin\.asp$ cf-userlogin.php [L,QSA]
+RewriteRule ^cf-usersignup\.asp$ cf-usersignup.php [L,QSA]
+RewriteRule ^travelmap\.asp$ travelmap.php [L,QSA]
+
+# Azdana-style /game/ base URL (game_port_* clients call http://host:port/game/...)
+RewriteRule ^game/cf-userlogin\.asp$ cf-userlogin.php [L,QSA]
+RewriteRule ^game/cf-userlogin\.php$ cf-userlogin.php [L,QSA]
+RewriteRule ^game/cf-usersignup\.asp$ cf-usersignup.php [L,QSA]
+RewriteRule ^game/cf-usersignup\.php$ cf-usersignup.php [L,QSA]
+RewriteRule ^game/getversion\.asp$ gameversion2.php [L,QSA]
+RewriteRule ^game/gameversion\.asp$ gameversion2.php [L,QSA]
+RewriteRule ^game/crossdomain\.xml$ crossdomain.xml [L]
+
+# SWF base URL is often /gamefiles/ — mirror root Flash endpoints there.
+RewriteRule ^gamefiles/cf-userlogin\.asp$ cf-userlogin.php [L,QSA]
+RewriteRule ^gamefiles/cf-usersignup\.asp$ cf-usersignup.php [L,QSA]
+RewriteRule ^gamefiles/travelmap\.asp$ travelmap.php [L,QSA]
+RewriteRule ^gamefiles/gameversion\.asp$ gameversion2.php [L,QSA]
+
+# Case-insensitive fallback for missing gamefiles assets (Linux).
+# Internal rewrite — no redirect — so Ruffle/Flash keep the original URL.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteCond %{REQUEST_URI} !/gamefiles/casefix\.php
+RewriteRule ^gamefiles/.+ gamefiles/casefix.php [L,QSA]
+
+# Avoid caching SWFs while iterating on a private server
+<FilesMatch "\.(swf|xml)$">
+  Header set Cache-Control "no-store, no-cache, must-revalidate"
+  Header set Pragma "no-cache"
+</FilesMatch>

@@ -1,8 +1,8 @@
 <?php
-$local = "localhost";
-$usuario = "root";
-$senha = "";
-$banco = "mextv3";
+$local = getenv('MYSQL_HOST') !== false && getenv('MYSQL_HOST') !== '' ? getenv('MYSQL_HOST') : '127.0.0.1';
+$usuario = getenv('MYSQL_USER') !== false && getenv('MYSQL_USER') !== '' ? getenv('MYSQL_USER') : 'root';
+$senha = getenv('MYSQL_PASSWORD') !== false ? getenv('MYSQL_PASSWORD') : '';
+$banco = getenv('MYSQL_DATABASE') !== false && getenv('MYSQL_DATABASE') !== '' ? getenv('MYSQL_DATABASE') : 'mextv3';
 mysql_connect($local, $usuario, $senha) or die("Erro ao Connectar");
 mysql_select_db($banco) or die("Erro ao selecionar a DB");
 ?>

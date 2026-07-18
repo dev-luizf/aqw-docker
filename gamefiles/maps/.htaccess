@@ -5,3 +5,9 @@
   Header Unset ETag
   FileETag None
 </Files>
+
+RewriteEngine On
+# Per-dir rules are not inherited by default — redeclare the casefix fallback.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule ^ /gamefiles/casefix.php [L,QSA]

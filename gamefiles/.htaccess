@@ -5,3 +5,10 @@
   Header Unset ETag
   FileETag None
 </Files>
+
+RewriteEngine On
+# Missing asset → case-insensitive resolver (no HTTP redirect).
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteCond %{REQUEST_URI} !casefix\.php
+RewriteRule ^ casefix.php [L,QSA]

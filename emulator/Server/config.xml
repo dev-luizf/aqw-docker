@@ -8,9 +8,10 @@
  <SmartFoxConfig>
    <ServerSetup>
       <!--
-        Specify an ip address or use an asterisk(*) to bind all available IPs
+        Specify an ip address or use an asterisk(*) to bind all available IPs.
+        Docker regenerates this file from docker/game/config.xml.template on start.
      -->
-      <ServerIP>IP</ServerIP>
+      <ServerIP>*</ServerIP>
       <ServerPort>5588</ServerPort>
       <AutoSendPolicyFile>true</AutoSendPolicyFile>
 
@@ -170,12 +171,13 @@
 			</Rooms>
 			<DatabaseManager active="true">
 				<Driver>com.mysql.jdbc.Driver</Driver>
-				<ConnectionString>jdbc:mysql://127.0.0.1:3306/mextv3?allowMultiQueries=true&amp;useCompression=true</ConnectionString>           
-				<UserName>root</UserName>
-				<Password></Password>             
-				<TestSQL><![CDATA[SELECT 1]]></TestSQL>           
+				<!-- Defaults match .env (aqw/aqw@mextv3). Docker overwrites host→db via config.xml.template. -->
+				<ConnectionString>jdbc:mysql://127.0.0.1:3306/mextv3?allowMultiQueries=true&amp;useCompression=true&amp;autoReconnect=true</ConnectionString>
+				<UserName>aqw</UserName>
+				<Password>aqw</Password>
+				<TestSQL><![CDATA[SELECT 1]]></TestSQL>
 				<MaxActive>50</MaxActive>
-				<MaxIdle>25</MaxIdle>           
+				<MaxIdle>25</MaxIdle>
 				<OnExhaustedPool>grow</OnExhaustedPool>
 				<BlockTime>1000</BlockTime>
 			</DatabaseManager>
