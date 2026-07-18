@@ -2,7 +2,26 @@
 *.bak
 *.pre-*
 
-tools/
 tmp/
 .cursor/
 .ffdec*/
+tools/__pycache__/
+tools/spider_export/
+tools/spider_export2/
+tools/spider_login_sprite/
+tools/spider_patches/
+tools/spider_patches_pcode/
+tools/spider_pcode/
+tools/game_join_patches/
+tools/loader_spider_export/
+tools/ffdec/
+
+gamefiles/.server-motd-build/
+gamefiles/*.swf.prelogin
+gamefiles/*.swf.test
+gamefiles/**/*.broken-player-init
+
+compiles/*
+!compiles/.gitkeep
+caches/*
+!caches/.gitkeep

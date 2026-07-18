@@ -1,8 +1,0 @@
-180.150.187.55 -  -  [26/Jan/2017:03:52:47 +0000] "GET http://www.baidu.com/favicon.ico HTTP/1.1" 404 1376 
-23.251.55.38 -  -  [26/Jan/2017:04:23:55 +0000] "GET http://www.baidu.com/?rands=_480623385229315526569856 HTTP/1.0" 200 4258 
-null -  -  [26/Jan/2017:04:23:55 +0000] "GET http://23.251.55.38/index.html?rands=_1674054473239443346636960 HTTP/1.0" 404 1375 
-91.236.75.4 -  -  [26/Jan/2017:07:05:23 +0000] "GET http://www.google.com/ HTTP/1.1" 200 4258 
-217.118.84.185 -  -  [26/Jan/2017:10:17:09 +0000] "GET /axis-cgi/jpg/image.cgi HTTP/1.1" 404 1387 
-23.251.55.38 -  -  [26/Jan/2017:13:20:55 +0000] "GET http://www.baidu.com/?rands=_110505033706802082531104 HTTP/1.0" 200 4258 
-null -  -  [26/Jan/2017:13:20:55 +0000] "GET http://23.251.55.38/index.html?rands=_1410012468065533924973520 HTTP/1.0" 404 1375 
-91.196.50.33 -  -  [26/Jan/2017:21:43:57 +0000] "GET http://testp3.pospr.waw.pl/testproxy.php HTTP/1.1" 404 1378 

@@ -229,7 +229,7 @@ while($l = mysql_fetch_assoc($selecionar)){
 				</div>
 			</div>
 			<article id="gStarter"><a href="#PLAY" title="Game Starter" onFocus="this.blur();" onclick="GameLib.Exec(1);return false;"></a></article>
-			<article id="gDownload"><a href="Play.php" title="Game" onFocus="this.blur();"></a></article>
+			<article id="gDownload"><a href="play.php" title="Game" onFocus="this.blur();"></a></article>
 	<div class="bgBottom"></div>
 </aside>
 					</section>

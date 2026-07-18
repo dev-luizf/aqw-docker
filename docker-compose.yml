@@ -41,7 +41,6 @@ services:
       - ./DB/mextv3.sql:/docker-entrypoint-initdb.d/01-mextv3.sql:ro
       - ./docker/db/02-bootstrap.sql:/docker-entrypoint-initdb.d/02-bootstrap.sql:ro
       - ./docker/db/03-battleon-map.sql:/docker-entrypoint-initdb.d/03-battleon-map.sql:ro
-      - ./docker/db/patch_settings_game44.sql:/docker-entrypoint-initdb.d/patch_settings_game44.sql:ro
     command:
       - --character-set-server=latin1
       - --collation-server=latin1_swedish_ci

@@ -1092,7 +1092,7 @@ function createSummaryAndThumb(pID){
 <div class='menu-secondary-container'>
 <ul class='menus menu-secondary'>
 <li><a href='/'>HomePage</a></li>
-<li><a href='Play.php'>Play Now</a></li>
+<li><a href='play.php'>Play Now</a></li>
 <li><a href='Account/Market.php'>Market</a></li>
 <li><a href='Team.php'>Staff</a></li>
 <li><a href='#'>Rankings</a>

@@ -9,7 +9,7 @@ docker compose up -d --build
 
 Play in browser (Ruffle + WebSocket proxy):
 
-  http://127.0.0.1:8081/play.php
+  http://127.0.0.1:8080/play.php
 
 Hard refresh after SWF changes: **Ctrl+Shift+R**
 
@@ -21,16 +21,16 @@ Hard refresh after SWF changes: **Ctrl+Shift+R**
 | `web` | PHP CMS (live-mounted repo) |
 | `game` | SmartFox 1.6.9 + AugoEidEs (TCP 5588) |
 | `proxy` | Ruffle WebSocket → TCP bridge |
-| `nginx` | Front door (`WEB_PORT_HOST`, default 8081) |
+| `nginx` | Front door (`WEB_PORT_HOST`, default 8080) |
 
 ## Default browser client
 
 Configured via `.env`:
 
-- `GAME_LOADER=/gamefiles/loaders/loader.swf`
-- `GAME_CLIENT_SWF=Game_44.swf`
-- `GAME_CLIENT_BG=client/prep.swf`
-- `GAME_VERSION_STATUS=success` → `play.php` uses `/getversion.asp`
+- `GAME_LOADER=/gamefiles/loaders/Loader_Spider.swf`
+- `GAME_CLIENT_SWF=spider.swf`
+- `GAME_CLIENT_BG=Back.swf`
+- `GAME_VERSION_STATUS=success`
 - `GAME_CLIENT_TITLE`, `GAME_CLIENT_VERSION`
 - `GAME_MENU`, `GAME_ASSETS`, `GAME_NEWS`, `GAME_MAP`, `GAME_BOOK`
 - `GAME_MAX_*` slot/friend/guild limits
@@ -44,7 +44,7 @@ Login-time assets (`gMenu`, `sAssets`, `sBG`) come from `.env`; the MariaDB
 `settings_login` values are generated compatibility copies.
 Bare `GAME_MENU` filenames are normalized to `gameMenu/<filename>` for both
 the PHP APIs and the legacy emulator.
-Game_44 example: `AWMenu14012017.swf`, `AWAssets.swf` → `FantasyDreamAssets-v02.swf`.
+The current Spider client uses `AWMenu14012017.swf` and `assets_2026.swf`.
 
 Loader background (`GAME_CLIENT_BG`) is loaded from `gamefiles/title/<sBG>` and must export
 the `TitleScreen` class (use `Back.swf`). `client/prep.swf` is only a loading splash and
@@ -89,7 +89,7 @@ Or manually:
 
 ```bash
 cp gamefiles/Game_20150324.swf.orig gamefiles/Game_20150324.swf
-python3 tools/patch_game_repoint.py --src gamefiles/Game_20150324.swf.orig --dst gamefiles/Game_20150324.swf --host 127.0.0.1 --port 8081
+python3 tools/patch_game_repoint.py --src gamefiles/Game_20150324.swf.orig --dst gamefiles/Game_20150324.swf --host 127.0.0.1 --port 8080
 python3 tools/patch_ruffle_framescripts.py
 ```
 

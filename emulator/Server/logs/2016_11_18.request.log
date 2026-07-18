@@ -1,4 +1,0 @@
-91.236.75.4 -  -  [18/Nov/2016:07:40:17 +0000] "GET http://www.google.com/reader/about/ HTTP/1.1" 404 1378 
-123.249.29.201 -  -  [18/Nov/2016:10:21:29 +0000] "GET http://123.249.29.201:43210/?rands=_612620304003806556979160 HTTP/1.1" 200 4258 
-93.174.93.136 -  -  [18/Nov/2016:18:18:25 +0000] "GET http://www.baidu.com/cache/global/img/gs.gif HTTP/1.1" 404 1388 
-91.196.50.33 -  -  [18/Nov/2016:23:32:47 +0000] "GET http://testp1.piwo.pila.pl/testproxy.php HTTP/1.1" 404 1378 

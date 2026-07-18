@@ -1,1 +1,0 @@
-For installation instructions, check the index page of the API documentation.
