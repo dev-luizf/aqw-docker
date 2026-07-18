@@ -26,6 +26,8 @@ type GameClientProps = {
   loader: string;
   publicGameIp: string;
   gamePort: number;
+  socketProxyPort?: number;
+  socketProxyUrl?: string;
   version: string;
 };
 
@@ -33,6 +35,8 @@ export function GameClient({
   loader,
   publicGameIp,
   gamePort,
+  socketProxyPort,
+  socketProxyUrl,
   version,
 }: GameClientProps) {
   const holderRef = useRef<HTMLDivElement>(null);
@@ -43,7 +47,12 @@ export function GameClient({
     if (initialized.current || !holderRef.current || !window.RufflePlayer) return;
     initialized.current = true;
 
-    const proxyUrl = `${location.protocol === "https:" ? "wss" : "ws"}://${location.host}/flash-socket-proxy`;
+    const socketProtocol = location.protocol === "https:" ? "wss" : "ws";
+    const proxyUrl =
+      socketProxyUrl ||
+      (socketProxyPort
+        ? `${socketProtocol}://${location.hostname}:${socketProxyPort}/flash-socket-proxy`
+        : `${socketProtocol}://${location.host}/flash-socket-proxy`);
     const socketProxy = [
       { host: publicGameIp, port: gamePort, proxyUrl },
       { host: "localhost", port: gamePort, proxyUrl },
@@ -129,7 +138,14 @@ export function GameClient({
       initialized.current = false;
       setError(cause instanceof Error ? cause.message : "The game client failed to load.");
     }
-  }, [gamePort, loader, publicGameIp, version]);
+  }, [
+    gamePort,
+    loader,
+    publicGameIp,
+    socketProxyPort,
+    socketProxyUrl,
+    version,
+  ]);
 
   return (
     <>

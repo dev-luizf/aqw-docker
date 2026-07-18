@@ -13,8 +13,9 @@ cp .env.example .env
 docker compose up --build
 ```
 
-Open <http://127.0.0.1:8081>. The migration service runs the reviewed Drizzle
-migrations once before either the portal or SmartFox starts.
+Open <http://127.0.0.1:8081>. The game container applies the reviewed Drizzle
+migrations before starting SmartFox, and the portal waits for the healthy game
+server.
 
 The first migration intentionally clears player-created data and preserves the
 static game definitions loaded by `docker/db/01-mextv3.sql`. Never run
@@ -68,9 +69,10 @@ identities linked to integer game characters by `users.AuthUserID`.
 
 ## Game compatibility
 
-Nginx serves exact-case `/gamefiles/*` paths directly. Missing paths pass to a
-traversal-safe case-insensitive Next.js resolver, including the default-hair
-fallback. Browser TCP traffic uses `/flash-socket-proxy`.
+Next.js and Vercel serve exact-case `/gamefiles/*` files directly from
+`public/gamefiles`. Browser TCP traffic uses the separately published
+WebSocket bridge port in local Docker; set `SOCKET_PROXY_URL` when the bridge
+is hosted at a dedicated production URL.
 
 The game image applies:
 

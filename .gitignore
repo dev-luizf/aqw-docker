@@ -15,10 +15,10 @@ tools/game_join_patches/
 tools/loader_spider_export/
 tools/ffdec/
 
-gamefiles/.server-motd-build/
-gamefiles/*.swf.prelogin
-gamefiles/*.swf.test
-gamefiles/**/*.broken-player-init
+public/gamefiles/.server-motd-build/
+public/gamefiles/*.swf.prelogin
+public/gamefiles/*.swf.test
+public/gamefiles/**/*.broken-player-init
 
 node_modules/
 .next/

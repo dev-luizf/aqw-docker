@@ -13,8 +13,10 @@ emulator/jre
 emulator/Uninstall.exe
 emulator/Server/logs/*
 emulator/Server/datastore/*
-gamefiles
 public/ruffle
-gamefiles/.server-motd-build
+public/gamefiles/.server-motd-build
+public/gamefiles/*.swf.prelogin
+public/gamefiles/*.swf.test
+public/gamefiles/**/*.broken-player-init
 **/node_modules
 .env

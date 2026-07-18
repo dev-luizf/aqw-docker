@@ -26,10 +26,12 @@ COPY --from=patcher /opt/sfs /opt/sfs
 COPY docker/game/config.xml.template /opt/sfs/config.xml.template
 COPY docker/game/AugoEidEs.conf.template /opt/sfs/conf/AugoEidEs.conf.template
 COPY docker/game/entrypoint.sh /entrypoint.sh
+COPY docker/game/migrate.sh /opt/sfs/migrate.sh
 COPY docker/game/start-sfs.sh /opt/sfs/start-sfs.sh
 COPY docker/sync-game-config.sh /opt/sfs/sync-game-config.sh
+COPY lib/db/migrations /opt/migrations
 
-RUN chmod +x /entrypoint.sh /opt/sfs/start-sfs.sh /opt/sfs/sync-game-config.sh \
+RUN chmod +x /entrypoint.sh /opt/sfs/migrate.sh /opt/sfs/start-sfs.sh /opt/sfs/sync-game-config.sh \
   && mkdir -p /opt/sfs/logs /opt/sfs/datastore
 
 EXPOSE 5588

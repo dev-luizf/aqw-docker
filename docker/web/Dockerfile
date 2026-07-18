@@ -17,12 +17,6 @@ RUN BETTER_AUTH_SECRET=build-only-secret-not-used-at-runtime-32 \
   BETTER_AUTH_URL=http://127.0.0.1:3000 \
   pnpm build
 
-FROM deps AS migrator
-COPY lib ./lib
-COPY drizzle.config.ts tsconfig.json ./
-ENV NODE_ENV=production
-CMD ["pnpm", "db:migrate"]
-
 FROM node:22-alpine AS runner
 WORKDIR /app
 ENV NODE_ENV=production

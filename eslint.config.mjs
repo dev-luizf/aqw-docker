@@ -10,6 +10,7 @@ export default defineConfig([
     "node_modules/**",
     "public/ruffle/**",
     "gamefiles/**",
+    "public/gamefiles/**",
     "emulator/**",
   ]),
 ]);

@@ -26,6 +26,7 @@ echo "MySQL is up."
 export MYSQL_HOST MYSQL_PORT MYSQL_USER MYSQL_PASSWORD MYSQL_DATABASE
 export GAME_PORT SERVER_NAME SFS_ADMIN_USER SFS_ADMIN_PASSWORD
 
+/opt/sfs/migrate.sh
 /opt/sfs/sync-game-config.sh
 
 # Escape XML special chars in password for JDBC URL / XML text nodes

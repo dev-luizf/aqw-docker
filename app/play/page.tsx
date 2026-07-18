@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   description: "Launch the Armagedom Worlds game client in your browser.",
 };
 
+export const dynamic = "force-dynamic";
+
 export default function PlayPage() {
   return (
     <main className="play-background min-h-[calc(100vh-4rem)] px-4 py-10">
@@ -21,6 +23,12 @@ export default function PlayPage() {
           loader={process.env.GAME_LOADER ?? "/gamefiles/loaders/Loader_Spider.swf"}
           publicGameIp={process.env.PUBLIC_GAME_IP ?? "127.0.0.1"}
           gamePort={Number(process.env.GAME_PORT ?? 5588)}
+          socketProxyPort={
+            process.env.SOCKET_PROXY_PORT
+              ? Number(process.env.SOCKET_PROXY_PORT)
+              : undefined
+          }
+          socketProxyUrl={process.env.SOCKET_PROXY_URL || undefined}
           version={process.env.GAME_CLIENT_VERSION ?? "ARM001"}
         />
         <p className="mx-auto mt-2 max-w-3xl text-center text-xs leading-5 text-white/55">
