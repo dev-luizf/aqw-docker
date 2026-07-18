@@ -20,6 +20,10 @@ done
 
 cp "$SPIDER_ORIG" "$SPIDER_OUT"
 python3 "$ROOT/tools/patch_game_repoint.py" --src "$SPIDER_ORIG" --dst "$SPIDER_OUT" --host "$HOST" --port "$PORT" --no-backup
+python3 "$ROOT/tools/patch_spider_registration.py" \
+  --swf "$SPIDER_OUT" \
+  --registration "newuser/registration.swf" \
+  --no-backup
 python3 "$ROOT/tools/patch_spider_map_load_complete.py" --swf "$SPIDER_OUT" --no-backup
 
 cp "$LOADER_ORIG" "$LOADER_OUT"

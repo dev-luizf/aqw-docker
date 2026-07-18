@@ -13,7 +13,7 @@ SET
   `Name` = 'Armagedom',
   `Count` = 0,
   `Max` = 900,
-  `MOTD` = 'Welcome to Armagedom Worlds (Docker). Play at /play.php'
+  `MOTD` = 'Welcome to Armagedom Worlds (Docker). Play at /play'
 WHERE `id` = 1;
 
 UPDATE `servers`

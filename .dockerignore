@@ -1,5 +1,6 @@
 .git
 .gitignore
+.next
 .cursor
 .ffdec*
 **/*.rar
@@ -12,9 +13,8 @@ emulator/jre
 emulator/Uninstall.exe
 emulator/Server/logs/*
 emulator/Server/datastore/*
-compiles/*
-caches/*
+gamefiles
+public/ruffle
 gamefiles/.server-motd-build
 **/node_modules
 .env
-*.md

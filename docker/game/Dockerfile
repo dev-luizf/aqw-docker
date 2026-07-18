@@ -4,10 +4,12 @@ FROM eclipse-temurin:8-jdk AS patcher
 WORKDIR /build
 COPY emulator/Server /opt/sfs
 COPY tools/patch_augoeides_login.sh /tools/patch_augoeides_login.sh
+COPY tools/patch_augoeides_ticket_login.sh /tools/patch_augoeides_ticket_login.sh
 COPY tools/patch_rooms_monster_definitions.sh /tools/patch_rooms_monster_definitions.sh
 RUN curl -sL -o /tmp/cfr.jar https://github.com/leibnitz27/cfr/releases/download/0.152/cfr-0.152.jar \
-  && chmod +x /tools/patch_augoeides_login.sh /tools/patch_rooms_monster_definitions.sh \
+  && chmod +x /tools/patch_augoeides_login.sh /tools/patch_augoeides_ticket_login.sh /tools/patch_rooms_monster_definitions.sh \
   && SFS_ROOT=/opt/sfs CFR_JAR=/tmp/cfr.jar /tools/patch_augoeides_login.sh \
+  && SFS_ROOT=/opt/sfs CFR_JAR=/tmp/cfr.jar /tools/patch_augoeides_ticket_login.sh \
   && SFS_ROOT=/opt/sfs CFR_JAR=/tmp/cfr.jar /tools/patch_rooms_monster_definitions.sh
 
 FROM eclipse-temurin:8-jre-jammy

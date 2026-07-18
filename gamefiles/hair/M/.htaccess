@@ -1,6 +1,0 @@
-RewriteEngine On
-# Missing hair variants fall back to Default.swf (casefix also covers
-# lowercase hair/m|f paths when the exact file is absent).
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-l
-RewriteRule ^.*\.swf$ Default.swf [L]

@@ -1,0 +1,13 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1784382000000,
+      "tag": "0000_modern_portal",
+      "breakpoints": true
+    }
+  ]
+}

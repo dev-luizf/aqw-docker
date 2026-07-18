@@ -2,7 +2,6 @@
 *.bak
 *.pre-*
 
-tmp/
 .cursor/
 .ffdec*/
 tools/__pycache__/
@@ -21,7 +20,9 @@ gamefiles/*.swf.prelogin
 gamefiles/*.swf.test
 gamefiles/**/*.broken-player-init
 
-compiles/*
-!compiles/.gitkeep
-caches/*
-!caches/.gitkeep
+node_modules/
+.next/
+coverage/
+next-env.d.ts
+tsconfig.tsbuildinfo
+public/ruffle/

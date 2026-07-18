@@ -49,8 +49,8 @@ def build_replacements(host: str, port: int) -> dict[str, str]:
         "https://game.aq.com/game/quest.asp?userid=": "/game/quest.asp?userid=",
         "http://game.aqworlds.com/game/": f"{base}/",
         "https://account.aq.com/": f"{base}/",
-        "http://launch.artix.com/latest/ArtixSetup.msi": f"{base}/Register.php",
-        "http://launch.artix.com/latest/ArtixGames.dmg": f"{base}/Register.php",
+        "http://launch.artix.com/latest/ArtixSetup.msi": f"{base}/play",
+        "http://launch.artix.com/latest/ArtixGames.dmg": f"{base}/play",
         "cf-userlogin.asp": "cf-userlogin.php",
         "cf-userlogin.asp?ran=": "cf-userlogin.php?ran=",
     }
