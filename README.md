@@ -3,6 +3,24 @@
 Run your own AQW private server on your computer with Docker. The website,
 game server, and database are started automatically.
 
+## Screenshots
+
+### Homepage
+
+![AQW Docker homepage](docs/screenshots/homepage.png)
+
+### Login
+
+![AdventureQuest Worlds login screen](docs/screenshots/login.png)
+
+### Gameplay
+
+![AdventureQuest Worlds gameplay](docs/screenshots/gameplay.png)
+
+### Account
+
+![AQW Docker account management](docs/screenshots/account.png)
+
 ## What you need
 
 - [Docker Desktop](https://docs.docker.com/get-started/get-docker/)
