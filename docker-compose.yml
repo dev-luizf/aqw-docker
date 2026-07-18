@@ -1,3 +1,32 @@
+x-game-config: &game-config
+  SITE_NAME: ${SITE_NAME:-Armagedom Worlds}
+  SERVER_NAME: ${SERVER_NAME:-Armagedom}
+  PUBLIC_GAME_IP: ${PUBLIC_GAME_IP:-127.0.0.1}
+  GAME_PORT: ${GAME_PORT:-5588}
+  GAME_LOADER: ${GAME_LOADER:-/gamefiles/loaders/Loader_Spider.swf}
+  GAME_CLIENT_SWF: ${GAME_CLIENT_SWF:-spider.swf}
+  GAME_CLIENT_TITLE: ${GAME_CLIENT_TITLE:-Armagedom Worlds}
+  GAME_CLIENT_BG: ${GAME_CLIENT_BG:-Back.swf}
+  GAME_CLIENT_VERSION: ${GAME_CLIENT_VERSION:-ARM001}
+  GAME_VERSION_STATUS: ${GAME_VERSION_STATUS:-success}
+  GAME_MENU: ${GAME_MENU-}
+  GAME_ASSETS: ${GAME_ASSETS:-AWAssets.swf}
+  GAME_NEWS: ${GAME_NEWS-}
+  GAME_MAP: ${GAME_MAP:-news/Map-UI_r38.swf}
+  GAME_BOOK: ${GAME_BOOK:-news/spiderbook3.swf}
+  GAME_FBC: ${GAME_FBC:-FBC-2011-03-08.swf}
+  GAME_NEW_USER: ${GAME_NEW_USER:-newuser/AQW-Landing-r6.swf}
+  GAME_MAX_BAG_SLOTS: ${GAME_MAX_BAG_SLOTS:-500}
+  GAME_MAX_BANK_SLOTS: ${GAME_MAX_BANK_SLOTS:-900}
+  GAME_MAX_HOUSE_SLOTS: ${GAME_MAX_HOUSE_SLOTS:-300}
+  GAME_MAX_GUILD_MEMBERS: ${GAME_MAX_GUILD_MEMBERS:-800}
+  GAME_MAX_FRIENDS: ${GAME_MAX_FRIENDS:-300}
+  GAME_MAX_LOADOUT_SLOTS: ${GAME_MAX_LOADOUT_SLOTS:-50}
+  GAME_SERVER_MAX_PLAYERS: ${GAME_SERVER_MAX_PLAYERS:-900}
+  GAME_SERVER_CHAT_MODE: ${GAME_SERVER_CHAT_MODE:-2}
+  GAME_SERVER_UPGRADE_ONLY: ${GAME_SERVER_UPGRADE_ONLY:-0}
+  GAME_SERVER_MOTD: ${GAME_SERVER_MOTD:-Welcome to Armagedom!}
+
 services:
   db:
     image: mariadb:10.5
@@ -33,13 +62,12 @@ services:
       db:
         condition: service_healthy
     environment:
+      <<: *game-config
       MYSQL_HOST: db
       MYSQL_PORT: ${MYSQL_PORT:-3306}
       MYSQL_DATABASE: ${MYSQL_DATABASE:-mextv3}
       MYSQL_USER: ${MYSQL_USER:-aqw}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD:-aqw}
-      GAME_PORT: ${GAME_PORT:-5588}
-      SERVER_NAME: ${SERVER_NAME:-Armagedom}
       SFS_ADMIN_USER: ${SFS_ADMIN_USER:-dolphin}
       SFS_ADMIN_PASSWORD: ${SFS_ADMIN_PASSWORD:-test123}
     # Raw TCP for native Flash players (optional). Browser clients use nginx /flash-socket-proxy.
@@ -57,21 +85,14 @@ services:
       db:
         condition: service_healthy
     environment:
+      <<: *game-config
       MYSQL_HOST: db
       MYSQL_PORT: ${MYSQL_PORT:-3306}
       MYSQL_DATABASE: ${MYSQL_DATABASE:-mextv3}
       MYSQL_USER: ${MYSQL_USER:-aqw}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD:-aqw}
-      SITE_NAME: ${SITE_NAME:-Armagedom Worlds}
       SITE_COMPANY: ${SITE_COMPANY:-Armagedom Team}
       SITE_DESCRIPTION: ${SITE_DESCRIPTION:-AQW private server}
-      SERVER_NAME: ${SERVER_NAME:-Armagedom}
-      PUBLIC_GAME_IP: ${PUBLIC_GAME_IP:-127.0.0.1}
-      GAME_PORT: ${GAME_PORT:-5588}
-      GAME_LOADER: ${GAME_LOADER:-/gamefiles/loaders/loader.swf}
-      GAME_CLIENT_SWF: ${GAME_CLIENT_SWF:-Game_20150324.swf}
-      GAME_CLIENT_BG: ${GAME_CLIENT_BG:-client/prep.swf}
-      GAME_VERSION_STATUS: ${GAME_VERSION_STATUS:-success}
       TIMEZONE: ${TIMEZONE:-UTC}
     expose:
       - "80"

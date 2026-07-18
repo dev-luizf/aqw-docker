@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/class.gameconfig.php';
+
 class Handler extends ContentMS {
     var $UserData, $World, $Settings;
     
@@ -27,6 +29,7 @@ class Handler extends ContentMS {
         } else $this->World->Items = json_decode(file_get_contents(Configuration::getPublic('WorldItems')), true);
         $sql = $this->MySQL('Query', "SELECT * FROM `settings_login`");
         while ($GameSettings = $sql->fetch_object()) $this->Settings->{$GameSettings->name} = $GameSettings->value;
+        $this->Settings = GameConfig::applyClientSettings($this->Settings);
         $this->assign("Settings", $this->Settings);        
         if (!isset($_SESSION["info"]['browser'])) {
             $_SESSION["info"]['browser']['engine'] = 'UNKNOWN';
@@ -803,6 +806,7 @@ class Handler extends ContentMS {
         $this->Settings = $this->Rates = array();
         $Query = $this->MySQL('Query', 'SELECT * FROM `settings_login`');
         while ($GameSettings = $Query->fetch_object()) $this->Settings[$GameSettings->name] = $GameSettings->value;
+        $this->Settings = GameConfig::applyClientSettings($this->Settings);
         $Query = $this->MySQL('Query', 'SELECT * FROM `settings_rates`');
         while ($GameSettings = $Query->fetch_object()) $this->Rates[$GameSettings->name] = $GameSettings->value;
     }

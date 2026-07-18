@@ -7,10 +7,19 @@ require_once __DIR__ . '/config.php';
 $publicGameIP = Configuration::getPublic('PublicGameIP') ?: '127.0.0.1';
 $gamePort = (int) (Configuration::getPublic('GamePort') ?: 5588);
 $gameLoader = Configuration::getPublic('GameLoader') ?: '/gamefiles/loaders/loader.swf';
+$gameLoaderUrl = $gameLoader;
+if ($gameLoaderUrl !== '' && $gameLoaderUrl[0] === '/') {
+    $loaderFs = __DIR__ . $gameLoaderUrl;
+    if (is_file($loaderFs)) {
+        $gameLoaderUrl .= '?t=' . filemtime($loaderFs);
+    }
+}
 $gameVersionStatus = getenv('GAME_VERSION_STATUS') !== false ? getenv('GAME_VERSION_STATUS') : '';
 $loaderParameters = ['sLang' => 'en'];
 if ($gameVersionStatus === 'success' || strpos($gameLoader, 'loaders/loader.swf') !== false) {
-    $loaderParameters['versionProvider'] = '/getversion.asp';
+    if (stripos($gameLoader, 'Loader_Spider') === false) {
+        $loaderParameters['versionProvider'] = '/getversion.asp';
+    }
 }
 $host = $_SERVER['HTTP_X_FORWARDED_HOST'] ?? ($_SERVER['HTTP_HOST'] ?? '127.0.0.1');
 // Prefer the public host:port the browser used (nginx may forward without the mapped port).
@@ -30,6 +39,18 @@ if (!empty($_SERVER['HTTP_X_FORWARDED_PROTO'])) {
     $proto = ($fwd === 'https') ? 'wss' : 'ws';
 }
 $proxyURL = $proto . '://' . $host . '/flash-socket-proxy';
+
+$httpBase = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http')
+    . '://' . $preferredHost . '/';
+if (stripos($gameLoader, 'Loader_Spider') !== false) {
+    // Spider loader: JSON gameversion + gamefiles/* relative to site root.
+    $loaderParameters['base'] = $httpBase;
+    // Private Ruffle stack: use classic cf-userlogin.php XML (not api/login/now JSON).
+    // Loader reads flashvar "isweb" (lowercase); spider always uses loginURL JSON, not cf-userlogin XML.
+    $loaderParameters['isweb'] = 'false';
+    $loaderParameters['isWeb'] = 'false';
+    $loaderParameters['allowNetworking'] = 'all';
+}
 
 $configJson = json_encode([
     'publicGameIP' => $publicGameIP,
@@ -107,10 +128,7 @@ $configJson = json_encode([
         letterbox: "on",
         scale: "showAll",
         forceScale: false,
-        credentialAllowList: [
-          "http://127.0.0.1:8081",
-          "http://localhost:8081"
-        ],
+        credentialAllowList: [window.location.origin],
         socketProxy: [
           { host: window.__AQW__.publicGameIP, port: window.__AQW__.gamePort, proxyUrl: window.__AQW__.proxyURL },
           { host: "localhost", port: window.__AQW__.gamePort, proxyUrl: window.__AQW__.proxyURL },
@@ -120,7 +138,7 @@ $configJson = json_encode([
 
       window.addEventListener("load", function () {
         const holder = document.getElementById("game-holder");
-        const loader = <?php echo json_encode($gameLoader, JSON_UNESCAPED_SLASHES); ?>;
+        const loader = <?php echo json_encode($gameLoaderUrl, JSON_UNESCAPED_SLASHES); ?>;
         const ruffle = window.RufflePlayer.newest();
         const player = ruffle.createPlayer();
         player.id = "AQWClient";
@@ -197,7 +215,9 @@ $configJson = json_encode([
         Open via http://<?php echo htmlspecialchars($preferredHost, ENT_QUOTES, 'UTF-8'); ?>/play.php —
         game traffic goes through /flash-socket-proxy (Ruffle). Hard refresh if needed (Ctrl+Shift+R).
         If the console shows an older Ruffle, disable the browser Ruffle extension so this page loads nightly 2026-07-14.
+        If you see a VerifyError after login, clear cache for this site and reload (a broken spider.swf may be cached).
         If Login does not click after typing, press Tab then Enter, or click the game once outside the text fields.
+        If you only see <strong>Back</strong> and <strong>Contact Us</strong> with no login fields, click <strong>Back</strong> once (hard refresh after updates: Ctrl+Shift+R).
       </p>
     </main>
   </body>

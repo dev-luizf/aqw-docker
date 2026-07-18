@@ -8401,7 +8401,7 @@ INSERT INTO `redeem_codes` (`id`, `Code`, `Coins`, `Gold`, `Exp`, `ClassPoints`,
 CREATE TABLE `servers` (
   `id` int(11) UNSIGNED NOT NULL,
   `Name` varchar(64) NOT NULL DEFAULT 'Server',
-  `IP` char(15) NOT NULL DEFAULT '0.0.0.0',
+  `IP` varchar(255) NOT NULL DEFAULT '0.0.0.0',
   `Online` tinyint(1) NOT NULL DEFAULT '0',
   `Upgrade` tinyint(1) NOT NULL DEFAULT '0',
   `Chat` tinyint(1) NOT NULL DEFAULT '2',
@@ -8437,7 +8437,7 @@ CREATE TABLE `settings_filters` (
 
 CREATE TABLE `settings_login` (
   `name` varchar(50) NOT NULL DEFAULT '',
-  `value` varchar(50) NOT NULL DEFAULT ''
+  `value` varchar(255) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --

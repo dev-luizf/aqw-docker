@@ -1,6 +1,10 @@
 -- Runs after 01-mextv3.sql on first container boot.
 -- Point the playable server at the Ruffle-friendly loopback IP.
--- Actual PUBLIC_GAME_IP is also synced by the web entrypoint on every start.
+-- Actual game/client values are synced from .env by both runtime entrypoints.
+
+-- Allow full asset paths/hostnames instead of the legacy 50/15-character limits.
+ALTER TABLE `settings_login` MODIFY `value` varchar(255) NOT NULL DEFAULT '';
+ALTER TABLE `servers` MODIFY `IP` varchar(255) NOT NULL DEFAULT '0.0.0.0';
 
 UPDATE `servers`
 SET
