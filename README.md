@@ -1,4 +1,4 @@
-# Armagedom Worlds
+# AQW Docker
 
 Run your own AQW private server on your computer with Docker. The website,
 game server, and database are started automatically.
