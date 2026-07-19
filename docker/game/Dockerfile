@@ -8,13 +8,15 @@ COPY emulator/Server /opt/sfs
 COPY tools/patch_augoeides_login.sh /tools/patch_augoeides_login.sh
 COPY tools/patch_augoeides_ticket_login.sh /tools/patch_augoeides_ticket_login.sh
 COPY tools/patch_augoeides_console.sh /tools/patch_augoeides_console.sh
+COPY tools/patch_augoeides_client_contracts.sh /tools/patch_augoeides_client_contracts.sh
 COPY tools/patch_rooms_monster_definitions.sh /tools/patch_rooms_monster_definitions.sh
 RUN curl -fsSL -o /tmp/cfr.jar "https://github.com/leibnitz27/cfr/releases/download/${CFR_VERSION}/cfr-${CFR_VERSION}.jar" \
   && echo "${CFR_SHA256}  /tmp/cfr.jar" | sha256sum -c - \
-  && chmod +x /tools/patch_augoeides_login.sh /tools/patch_augoeides_ticket_login.sh /tools/patch_augoeides_console.sh /tools/patch_rooms_monster_definitions.sh \
+  && chmod +x /tools/patch_augoeides_login.sh /tools/patch_augoeides_ticket_login.sh /tools/patch_augoeides_console.sh /tools/patch_augoeides_client_contracts.sh /tools/patch_rooms_monster_definitions.sh \
   && SFS_ROOT=/opt/sfs CFR_JAR=/tmp/cfr.jar /tools/patch_augoeides_login.sh \
   && SFS_ROOT=/opt/sfs CFR_JAR=/tmp/cfr.jar /tools/patch_augoeides_ticket_login.sh \
   && SFS_ROOT=/opt/sfs CFR_JAR=/tmp/cfr.jar /tools/patch_augoeides_console.sh \
+  && SFS_ROOT=/opt/sfs CFR_JAR=/tmp/cfr.jar /tools/patch_augoeides_client_contracts.sh \
   && SFS_ROOT=/opt/sfs CFR_JAR=/tmp/cfr.jar /tools/patch_rooms_monster_definitions.sh \
   && rm -rf /opt/sfs/lib/jetty /opt/sfs/lib/jsp-2.1 /opt/sfs/webserver
 

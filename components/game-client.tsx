@@ -78,7 +78,7 @@ export function GameClient({
       wmode: "window",
       letterbox: "on",
       scale: "showAll",
-      quality: "best",
+      quality: "medium",
       forceScale: false,
       allowFullscreen: true,
       backgroundExecutionMode: "mainThread",
@@ -137,6 +137,7 @@ export function GameClient({
           allowScriptAccess: true,
           allowNetworking: "all",
           allowFullscreen: true,
+          quality: "medium",
           wmode: "window",
           socketProxy,
         });
