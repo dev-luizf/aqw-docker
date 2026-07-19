@@ -68,25 +68,27 @@ export function GameClient({
     ];
 
     window.RufflePlayer.config = {
+      ...window.RufflePlayer.config,
       autoplay: "on",
       unmuteOverlay: "hidden",
       splashScreen: false,
-      muted: true,
       allowScriptAccess: true,
       logLevel: "warn",
       polyfills: false,
       wmode: "window",
       letterbox: "on",
       scale: "showAll",
+      quality: "best",
       forceScale: false,
-      credentialAllowList: [location.origin],
+      allowFullscreen: true,
+      backgroundExecutionMode: "mainThread",
       socketProxy,
     };
 
     const player = window.RufflePlayer.newest().createPlayer();
     player.id = "AQWClient";
-    player.style.width = "960px";
-    player.style.height = "550px";
+    player.style.width = "100%";
+    player.style.height = "100%";
     holder.replaceChildren(player);
 
     const patchPointer = () => {
@@ -134,9 +136,9 @@ export function GameClient({
           height: 550,
           allowScriptAccess: true,
           allowNetworking: "all",
+          allowFullscreen: true,
           wmode: "window",
           socketProxy,
-          credentialAllowList: [location.origin],
         });
 
         if (cancelled) return;
